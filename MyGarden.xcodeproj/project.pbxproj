@@ -7,16 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C535B5E2BDFCB390072134D /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C535B5D2BDFCB390072134D /* RobotoFlex.ttf */; };
+		7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */; };
+		7C535B632BE112C10072134D /* PlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B622BE112C10072134D /* PlantViewController.swift */; };
+		7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B642BE2403E0072134D /* DayTableViewController.swift */; };
+		7C53B2E62BADB5B300BBFEA2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2E52BADB5B300BBFEA2 /* SnapKit */; };
+		7C53B2E82BADB5B300BBFEA2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2E72BADB5B300BBFEA2 /* SnapKit-Dynamic */; };
+		7C53B2EC2BADB65A00BBFEA2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2EB2BADB65A00BBFEA2 /* SnapKit */; };
+		7C53B2EE2BADB65A00BBFEA2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2ED2BADB65A00BBFEA2 /* SnapKit-Dynamic */; };
+		7C53B2F32BB6EFDB00BBFEA2 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B2F22BB6EFDB00BBFEA2 /* CustomColors.swift */; };
+		7C53B2F62BB6F01000BBFEA2 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B2F52BB6F01000BBFEA2 /* NoteView.swift */; };
+		7C53B2F82BB8251900BBFEA2 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B2F72BB8251900BBFEA2 /* ReminderView.swift */; };
+		7C53B2FC2BBED98300BBFEA2 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C53B2FB2BBED98300BBFEA2 /* Roboto.ttf */; };
+		7C53B2FE2BBED99500BBFEA2 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B2FD2BBED99500BBFEA2 /* CustomFonts.swift */; };
+		7C53B3022BBEDFE100BBFEA2 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3012BBEDFE100BBFEA2 /* TagView.swift */; };
+		7C53B3052BC0153600BBFEA2 /* DayVeiwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3042BC0153600BBFEA2 /* DayVeiwController.swift */; };
+		7C53B3072BC1F4B900BBFEA2 /* DayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */; };
+		7C53B3092BDBCBCF00BBFEA2 /* ReminderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3082BDBCBCF00BBFEA2 /* ReminderButton.swift */; };
+		7C53B30B2BDFA0B000BBFEA2 /* DayModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */; };
 		7C77125A2B91F100002AB97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7712592B91F100002AB97E /* AppDelegate.swift */; };
 		7C77125C2B91F100002AB97E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77125B2B91F100002AB97E /* SceneDelegate.swift */; };
-		7C77125E2B91F100002AB97E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77125D2B91F100002AB97E /* ViewController.swift */; };
-		7C7712612B91F100002AB97E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C77125F2B91F100002AB97E /* Main.storyboard */; };
+		7C77125E2B91F100002AB97E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77125D2B91F100002AB97E /* MainViewController.swift */; };
 		7C7712642B91F100002AB97E /* MyGarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C7712622B91F100002AB97E /* MyGarden.xcdatamodeld */; };
 		7C7712662B91F102002AB97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7712652B91F102002AB97E /* Assets.xcassets */; };
 		7C7712692B91F102002AB97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7712672B91F102002AB97E /* LaunchScreen.storyboard */; };
 		7C7712742B91F102002AB97E /* MyGardenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7712732B91F102002AB97E /* MyGardenTests.swift */; };
 		7C77127E2B91F102002AB97E /* MyGardenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77127D2B91F102002AB97E /* MyGardenUITests.swift */; };
 		7C7712802B91F102002AB97E /* MyGardenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77127F2B91F102002AB97E /* MyGardenUITestsLaunchTests.swift */; };
+		7C9725922BE25337006AA86E /* ReminderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725912BE25337006AA86E /* ReminderStruct.swift */; };
+		7C9725942BE2606D006AA86E /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */; };
+		7C9725962BE38248006AA86E /* RemindButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */; };
+		7C9725982BE38BA9006AA86E /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */; };
+		7C9BEADC2BE4DFD600CCDFD3 /* TagStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +59,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C535B5D2BDFCB390072134D /* RobotoFlex.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = RobotoFlex.ttf; path = "../../../../../../../Users/alinabikkinina/Downloads/Roboto Flex-2/RobotoFlex.ttf"; sourceTree = "<group>"; };
+		7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		7C535B622BE112C10072134D /* PlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantViewController.swift; sourceTree = "<group>"; };
+		7C535B642BE2403E0072134D /* DayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
+		7C53B2F22BB6EFDB00BBFEA2 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		7C53B2F52BB6F01000BBFEA2 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		7C53B2F72BB8251900BBFEA2 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		7C53B2FB2BBED98300BBFEA2 /* Roboto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roboto.ttf; sourceTree = "<group>"; };
+		7C53B2FD2BBED99500BBFEA2 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		7C53B3012BBEDFE100BBFEA2 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		7C53B3042BC0153600BBFEA2 /* DayVeiwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayVeiwController.swift; sourceTree = "<group>"; };
+		7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPresenter.swift; sourceTree = "<group>"; };
+		7C53B3082BDBCBCF00BBFEA2 /* ReminderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderButton.swift; sourceTree = "<group>"; };
+		7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModule.swift; sourceTree = "<group>"; };
 		7C7712562B91F100002AB97E /* MyGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7712592B91F100002AB97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C77125B2B91F100002AB97E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7C77125D2B91F100002AB97E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7C7712602B91F100002AB97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7C77125D2B91F100002AB97E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7C7712632B91F100002AB97E /* MyGarden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyGarden.xcdatamodel; sourceTree = "<group>"; };
 		7C7712652B91F102002AB97E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C7712682B91F102002AB97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +86,11 @@
 		7C7712792B91F102002AB97E /* MyGardenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGardenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C77127D2B91F102002AB97E /* MyGardenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenUITests.swift; sourceTree = "<group>"; };
 		7C77127F2B91F102002AB97E /* MyGardenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7C9725912BE25337006AA86E /* ReminderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStruct.swift; sourceTree = "<group>"; };
+		7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindButtonTableViewCell.swift; sourceTree = "<group>"; };
+		7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C53B2E62BADB5B300BBFEA2 /* SnapKit in Frameworks */,
+				7C53B2E82BADB5B300BBFEA2 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C53B2EC2BADB65A00BBFEA2 /* SnapKit in Frameworks */,
+				7C53B2EE2BADB65A00BBFEA2 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +122,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C535B612BE112A20072134D /* PlantModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C535B622BE112C10072134D /* PlantViewController.swift */,
+			);
+			path = PlantModule;
+			sourceTree = "<group>";
+		};
+		7C535B662BE244270072134D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */,
+				7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */,
+				7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */,
+				7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7C53B2F02BB6EFB600BBFEA2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7C97258F2BE2530D006AA86E /* Models */,
+				7C535B662BE244270072134D /* Cells */,
+				7C535B612BE112A20072134D /* PlantModule */,
+				7C53B3032BC014D800BBFEA2 /* DayModule */,
+				7C53B2F42BB6EFFE00BBFEA2 /* Views */,
+				7C53B2F12BB6EFC900BBFEA2 /* Design */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7C53B2F12BB6EFC900BBFEA2 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				7C53B2F22BB6EFDB00BBFEA2 /* CustomColors.swift */,
+				7C53B2FD2BBED99500BBFEA2 /* CustomFonts.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		7C53B2F42BB6EFFE00BBFEA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C53B2F52BB6F01000BBFEA2 /* NoteView.swift */,
+				7C53B2F72BB8251900BBFEA2 /* ReminderView.swift */,
+				7C53B3012BBEDFE100BBFEA2 /* TagView.swift */,
+				7C53B3082BDBCBCF00BBFEA2 /* ReminderButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C53B2F92BBED8DC00BBFEA2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7C53B2FA2BBED8E600BBFEA2 /* Fonts */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7C53B2FA2BBED8E600BBFEA2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7C535B5D2BDFCB390072134D /* RobotoFlex.ttf */,
+				7C53B2FB2BBED98300BBFEA2 /* Roboto.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7C53B3032BC014D800BBFEA2 /* DayModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C53B3042BC0153600BBFEA2 /* DayVeiwController.swift */,
+				7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */,
+				7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */,
+				7C535B642BE2403E0072134D /* DayTableViewController.swift */,
+			);
+			path = DayModule;
+			sourceTree = "<group>";
+		};
 		7C77124D2B91F100002AB97E = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +225,11 @@
 		7C7712582B91F100002AB97E /* MyGarden */ = {
 			isa = PBXGroup;
 			children = (
+				7C53B2F92BBED8DC00BBFEA2 /* Resource */,
+				7C53B2F02BB6EFB600BBFEA2 /* Source */,
 				7C7712592B91F100002AB97E /* AppDelegate.swift */,
 				7C77125B2B91F100002AB97E /* SceneDelegate.swift */,
-				7C77125D2B91F100002AB97E /* ViewController.swift */,
-				7C77125F2B91F100002AB97E /* Main.storyboard */,
+				7C77125D2B91F100002AB97E /* MainViewController.swift */,
 				7C7712652B91F102002AB97E /* Assets.xcassets */,
 				7C7712672B91F102002AB97E /* LaunchScreen.storyboard */,
 				7C77126A2B91F102002AB97E /* Info.plist */,
@@ -130,6 +255,23 @@
 			path = MyGardenUITests;
 			sourceTree = "<group>";
 		};
+		7C97258F2BE2530D006AA86E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C9725902BE25318006AA86E /* Structs */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C9725902BE25318006AA86E /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				7C9725912BE25337006AA86E /* ReminderStruct.swift */,
+				7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +288,10 @@
 			dependencies = (
 			);
 			name = MyGarden;
+			packageProductDependencies = (
+				7C53B2E52BADB5B300BBFEA2 /* SnapKit */,
+				7C53B2E72BADB5B300BBFEA2 /* SnapKit-Dynamic */,
+			);
 			productName = MyGarden;
 			productReference = 7C7712562B91F100002AB97E /* MyGarden.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +310,10 @@
 				7C7712712B91F102002AB97E /* PBXTargetDependency */,
 			);
 			name = MyGardenTests;
+			packageProductDependencies = (
+				7C53B2EB2BADB65A00BBFEA2 /* SnapKit */,
+				7C53B2ED2BADB65A00BBFEA2 /* SnapKit-Dynamic */,
+			);
 			productName = MyGardenTests;
 			productReference = 7C77126F2B91F102002AB97E /* MyGardenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -218,6 +368,9 @@
 				Base,
 			);
 			mainGroup = 7C77124D2B91F100002AB97E;
+			packageReferences = (
+				7C53B2E42BADB2E100BBFEA2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7C7712572B91F100002AB97E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,9 +387,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C53B2FC2BBED98300BBFEA2 /* Roboto.ttf in Resources */,
+				7C535B5E2BDFCB390072134D /* RobotoFlex.ttf in Resources */,
 				7C7712692B91F102002AB97E /* LaunchScreen.storyboard in Resources */,
 				7C7712662B91F102002AB97E /* Assets.xcassets in Resources */,
-				7C7712612B91F100002AB97E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +415,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */,
+				7C53B2FE2BBED99500BBFEA2 /* CustomFonts.swift in Sources */,
+				7C53B3052BC0153600BBFEA2 /* DayVeiwController.swift in Sources */,
 				7C7712642B91F100002AB97E /* MyGarden.xcdatamodeld in Sources */,
-				7C77125E2B91F100002AB97E /* ViewController.swift in Sources */,
+				7C53B3072BC1F4B900BBFEA2 /* DayPresenter.swift in Sources */,
+				7C9725942BE2606D006AA86E /* NoteTableViewCell.swift in Sources */,
+				7C53B2F32BB6EFDB00BBFEA2 /* CustomColors.swift in Sources */,
+				7C53B2F62BB6F01000BBFEA2 /* NoteView.swift in Sources */,
+				7C53B2F82BB8251900BBFEA2 /* ReminderView.swift in Sources */,
+				7C9725962BE38248006AA86E /* RemindButtonTableViewCell.swift in Sources */,
+				7C77125E2B91F100002AB97E /* MainViewController.swift in Sources */,
+				7C53B30B2BDFA0B000BBFEA2 /* DayModule.swift in Sources */,
 				7C77125A2B91F100002AB97E /* AppDelegate.swift in Sources */,
+				7C535B632BE112C10072134D /* PlantViewController.swift in Sources */,
+				7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */,
+				7C53B3092BDBCBCF00BBFEA2 /* ReminderButton.swift in Sources */,
+				7C9725922BE25337006AA86E /* ReminderStruct.swift in Sources */,
 				7C77125C2B91F100002AB97E /* SceneDelegate.swift in Sources */,
+				7C53B3022BBEDFE100BBFEA2 /* TagView.swift in Sources */,
+				7C9BEADC2BE4DFD600CCDFD3 /* TagStruct.swift in Sources */,
+				7C9725982BE38BA9006AA86E /* ReminderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +472,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7C77125F2B91F100002AB97E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C7712602B91F100002AB97E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7C7712672B91F102002AB97E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -450,7 +613,6 @@
 				INFOPLIST_FILE = MyGarden/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -460,9 +622,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bikkinina.a.MyGarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -477,7 +643,6 @@
 				INFOPLIST_FILE = MyGarden/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,9 +652,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bikkinina.a.MyGarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -605,6 +774,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C53B2E42BADB2E100BBFEA2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C53B2E52BADB5B300BBFEA2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C53B2E42BADB2E100BBFEA2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7C53B2E72BADB5B300BBFEA2 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C53B2E42BADB2E100BBFEA2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		7C53B2EB2BADB65A00BBFEA2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C53B2E42BADB2E100BBFEA2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7C53B2ED2BADB65A00BBFEA2 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C53B2E42BADB2E100BBFEA2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7C7712622B91F100002AB97E /* MyGarden.xcdatamodeld */ = {

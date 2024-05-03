@@ -16,4 +16,8 @@ extension UIColor {
     static var noteTextGray: UIColor {
         return UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 100)
     }
+    
+    static var reminderGray: UIColor {
+        return UIColor(red: 114/255, green: 114/255, blue: 114/255, alpha: 100)
+    }
 }

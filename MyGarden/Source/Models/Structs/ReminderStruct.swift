@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct ReminderStruct {
+    let reminderText: String
+    let reminderDate: String
+    //TODO: let remindersPlants: Set<PlantEntity>?
+}

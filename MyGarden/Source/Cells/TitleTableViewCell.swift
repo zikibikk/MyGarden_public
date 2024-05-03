@@ -7,11 +7,22 @@
 
 import UIKit
 
-class NoteTableViewCell: UITableViewCell {
-    private lazy var noteView = NoteView()
+class TitleTableViewCell: UITableViewCell {
+    private lazy var titleLabel: UILabel = {
+        let dayLabel = UILabel()
+        dayLabel.font = .titleFont
+        dayLabel.textColor = .black
+        return dayLabel
+    }()
+    
+    var text: String? {
+        set { titleLabel.text = newValue }
+        get { return titleLabel.text }
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configureCell()
     }
     
     required init?(coder: NSCoder) {
@@ -19,11 +30,16 @@ class NoteTableViewCell: UITableViewCell {
     }
 }
 
-extension NoteTableViewCell {
-    func configureView() {
-        noteView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().offset(20)
+extension TitleTableViewCell {
+    func configureCell() {
+        self.selectionStyle = .none
+        contentView.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(25)
+            make.top.equalToSuperview().inset(40)
         }
+        
+        contentView.snp.makeConstraints({$0.bottom.equalTo(titleLabel)})
     }
 }
