@@ -22,6 +22,12 @@ extension UIFont {
     }
     
     static var titleFont: UIFont {
-        return UIFont(name: "Roboto", size: 35)!
+        return UIFont(name: "Roboto-Bold", size: 35)!
     }
+    
+    static var subtitleFont: UIFont {
+        return UIFont(name: "Roboto-Bold", size: 20)!
+    }
+    
+    
 }

@@ -20,6 +20,11 @@ class TitleTableViewCell: UITableViewCell {
         get { return titleLabel.text }
     }
     
+    var font: UIFont {
+        get { return titleLabel.font }
+        set { titleLabel.font = newValue }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCell()

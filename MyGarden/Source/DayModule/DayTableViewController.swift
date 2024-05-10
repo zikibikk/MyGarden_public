@@ -10,6 +10,7 @@ import SnapKit
 
 enum ModelTypes {
     case title
+    case subtitle
     case note
     case reminderButton
     case reminder
@@ -89,6 +90,12 @@ extension DayTableViewController: UITableViewDataSource, UITableViewDelegate {
             reminderCell.configureCell(time: reminders[indexPath.row - 3].reminderDate, text: reminders[indexPath.row - 3].reminderText)
             return reminderCell
             
+        case .subtitle:
+            let subtitleCell = tableView.dequeueReusableCell(withIdentifier: "\(TitleTableViewCell.self)", for: indexPath) as! TitleTableViewCell
+            subtitleCell.text = model.1
+            subtitleCell.font = .subtitleFont
+            return subtitleCell
+            
         case .plants:
             let tagsCell = tableView.dequeueReusableCell(withIdentifier: "\(TagTableViewCell.self)", for: indexPath) as! TagTableViewCell
             tagsCell.configure(tagsStruct: self.tags)
@@ -120,9 +127,8 @@ extension DayTableViewController: iNoteView {
         }
     }
     
-    
     func getTags(tagsStruct: [TagStruct]) {
-        models.append((ModelTypes.title, "Растения"))
+        models.append((ModelTypes.subtitle, "Растения"))
         models.append((ModelTypes.plants, ""))
         tags = tagsStruct
     }

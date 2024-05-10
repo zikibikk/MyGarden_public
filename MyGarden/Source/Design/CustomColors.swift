@@ -13,8 +13,16 @@ extension UIColor {
         return UIColor(red: 78/255, green: 161/255, blue: 101/255, alpha: 0.29)
     }
     
+    static var myGreen: UIColor {
+        return UIColor(red: 78/255, green: 161/255, blue: 101/255, alpha: 1)
+    }
+    
     static var noteTextGray: UIColor {
         return UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 100)
+    }
+    
+    static var separatorGray: UIColor {
+        return UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 100)
     }
     
     static var reminderGray: UIColor {

@@ -11,6 +11,8 @@ class ReminderButtonTableViewCell: UITableViewCell {
     
     private lazy var reminderButton = ReminderButton()
     
+    var color: UIColor { get {return reminderButton.color} set { reminderButton.color = newValue } }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCell()

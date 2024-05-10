@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C535B5E2BDFCB390072134D /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C535B5D2BDFCB390072134D /* RobotoFlex.ttf */; };
 		7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */; };
-		7C535B632BE112C10072134D /* PlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B622BE112C10072134D /* PlantViewController.swift */; };
+		7C535B632BE112C10072134D /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B622BE112C10072134D /* PlantTableViewController.swift */; };
 		7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B642BE2403E0072134D /* DayTableViewController.swift */; };
 		7C53B2E62BADB5B300BBFEA2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2E52BADB5B300BBFEA2 /* SnapKit */; };
 		7C53B2E82BADB5B300BBFEA2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2E72BADB5B300BBFEA2 /* SnapKit-Dynamic */; };
@@ -21,7 +20,6 @@
 		7C53B2FC2BBED98300BBFEA2 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C53B2FB2BBED98300BBFEA2 /* Roboto.ttf */; };
 		7C53B2FE2BBED99500BBFEA2 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B2FD2BBED99500BBFEA2 /* CustomFonts.swift */; };
 		7C53B3022BBEDFE100BBFEA2 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3012BBEDFE100BBFEA2 /* TagView.swift */; };
-		7C53B3052BC0153600BBFEA2 /* DayVeiwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3042BC0153600BBFEA2 /* DayVeiwController.swift */; };
 		7C53B3072BC1F4B900BBFEA2 /* DayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */; };
 		7C53B3092BDBCBCF00BBFEA2 /* ReminderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B3082BDBCBCF00BBFEA2 /* ReminderButton.swift */; };
 		7C53B30B2BDFA0B000BBFEA2 /* DayModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */; };
@@ -39,6 +37,18 @@
 		7C9725962BE38248006AA86E /* RemindButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */; };
 		7C9725982BE38BA9006AA86E /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */; };
 		7C9BEADC2BE4DFD600CCDFD3 /* TagStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */; };
+		7C9EC32C2BE62DEE009C142C /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */; };
+		7C9EC32F2BE62E5E009C142C /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */; };
+		7C9EC3312BEA22B1009C142C /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3302BEA22B1009C142C /* Assembly.swift */; };
+		7C9EC3332BEB6887009C142C /* PlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */; };
+		7C9EC3352BEB689C009C142C /* PlantsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3342BEB689C009C142C /* PlantsModule.swift */; };
+		7C9EC3372BEB99D5009C142C /* FixedPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */; };
+		7C9EC33E2BECD870009C142C /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */; };
+		7C9EC33F2BECD870009C142C /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */; };
+		7C9EC3402BECD870009C142C /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */; };
+		7C9EC35A2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
+		7C9EC35B2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
+		7C9EC35C2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C535B5D2BDFCB390072134D /* RobotoFlex.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = RobotoFlex.ttf; path = "../../../../../../../Users/alinabikkinina/Downloads/Roboto Flex-2/RobotoFlex.ttf"; sourceTree = "<group>"; };
 		7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
-		7C535B622BE112C10072134D /* PlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantViewController.swift; sourceTree = "<group>"; };
+		7C535B622BE112C10072134D /* PlantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewController.swift; sourceTree = "<group>"; };
 		7C535B642BE2403E0072134D /* DayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
 		7C53B2F22BB6EFDB00BBFEA2 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		7C53B2F52BB6F01000BBFEA2 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
@@ -69,7 +78,6 @@
 		7C53B2FB2BBED98300BBFEA2 /* Roboto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roboto.ttf; sourceTree = "<group>"; };
 		7C53B2FD2BBED99500BBFEA2 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
 		7C53B3012BBEDFE100BBFEA2 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
-		7C53B3042BC0153600BBFEA2 /* DayVeiwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayVeiwController.swift; sourceTree = "<group>"; };
 		7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPresenter.swift; sourceTree = "<group>"; };
 		7C53B3082BDBCBCF00BBFEA2 /* ReminderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderButton.swift; sourceTree = "<group>"; };
 		7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModule.swift; sourceTree = "<group>"; };
@@ -91,6 +99,14 @@
 		7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindButtonTableViewCell.swift; sourceTree = "<group>"; };
 		7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStruct.swift; sourceTree = "<group>"; };
+		7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
+		7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		7C9EC3302BEA22B1009C142C /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsPresenter.swift; sourceTree = "<group>"; };
+		7C9EC3342BEB689C009C142C /* PlantsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModule.swift; sourceTree = "<group>"; };
+		7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedPlantTableViewCell.swift; sourceTree = "<group>"; };
+		7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RobotoFlex.ttf; sourceTree = "<group>"; };
+		7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +141,9 @@
 		7C535B612BE112A20072134D /* PlantModule */ = {
 			isa = PBXGroup;
 			children = (
-				7C535B622BE112C10072134D /* PlantViewController.swift */,
+				7C535B622BE112C10072134D /* PlantTableViewController.swift */,
+				7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */,
+				7C9EC3342BEB689C009C142C /* PlantsModule.swift */,
 			);
 			path = PlantModule;
 			sourceTree = "<group>";
@@ -133,10 +151,12 @@
 		7C535B662BE244270072134D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7C9EC3382BEB9CD7009C142C /* PlantTableView */,
 				7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */,
 				7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */,
 				7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */,
 				7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */,
+				7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -170,6 +190,7 @@
 				7C53B2F72BB8251900BBFEA2 /* ReminderView.swift */,
 				7C53B3012BBEDFE100BBFEA2 /* TagView.swift */,
 				7C53B3082BDBCBCF00BBFEA2 /* ReminderButton.swift */,
+				7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,7 +206,8 @@
 		7C53B2FA2BBED8E600BBFEA2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				7C535B5D2BDFCB390072134D /* RobotoFlex.ttf */,
+				7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */,
+				7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */,
 				7C53B2FB2BBED98300BBFEA2 /* Roboto.ttf */,
 			);
 			path = Fonts;
@@ -194,10 +216,10 @@
 		7C53B3032BC014D800BBFEA2 /* DayModule */ = {
 			isa = PBXGroup;
 			children = (
-				7C53B3042BC0153600BBFEA2 /* DayVeiwController.swift */,
 				7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */,
 				7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */,
 				7C535B642BE2403E0072134D /* DayTableViewController.swift */,
+				7C9EC3302BEA22B1009C142C /* Assembly.swift */,
 			);
 			path = DayModule;
 			sourceTree = "<group>";
@@ -270,6 +292,14 @@
 				7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */,
 			);
 			path = Structs;
+			sourceTree = "<group>";
+		};
+		7C9EC3382BEB9CD7009C142C /* PlantTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */,
+			);
+			path = PlantTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,8 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C53B2FC2BBED98300BBFEA2 /* Roboto.ttf in Resources */,
-				7C535B5E2BDFCB390072134D /* RobotoFlex.ttf in Resources */,
 				7C7712692B91F102002AB97E /* LaunchScreen.storyboard in Resources */,
+				7C9EC35A2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */,
+				7C9EC33E2BECD870009C142C /* RobotoFlex.ttf in Resources */,
 				7C7712662B91F102002AB97E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +429,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C9EC35B2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */,
+				7C9EC33F2BECD870009C142C /* RobotoFlex.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +438,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C9EC35C2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */,
+				7C9EC3402BECD870009C142C /* RobotoFlex.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,22 +452,27 @@
 			files = (
 				7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */,
 				7C53B2FE2BBED99500BBFEA2 /* CustomFonts.swift in Sources */,
-				7C53B3052BC0153600BBFEA2 /* DayVeiwController.swift in Sources */,
 				7C7712642B91F100002AB97E /* MyGarden.xcdatamodeld in Sources */,
 				7C53B3072BC1F4B900BBFEA2 /* DayPresenter.swift in Sources */,
+				7C9EC32F2BE62E5E009C142C /* TagTableViewCell.swift in Sources */,
+				7C9EC32C2BE62DEE009C142C /* TagCollectionView.swift in Sources */,
 				7C9725942BE2606D006AA86E /* NoteTableViewCell.swift in Sources */,
 				7C53B2F32BB6EFDB00BBFEA2 /* CustomColors.swift in Sources */,
+				7C9EC3352BEB689C009C142C /* PlantsModule.swift in Sources */,
 				7C53B2F62BB6F01000BBFEA2 /* NoteView.swift in Sources */,
 				7C53B2F82BB8251900BBFEA2 /* ReminderView.swift in Sources */,
 				7C9725962BE38248006AA86E /* RemindButtonTableViewCell.swift in Sources */,
 				7C77125E2B91F100002AB97E /* MainViewController.swift in Sources */,
+				7C9EC3372BEB99D5009C142C /* FixedPlantTableViewCell.swift in Sources */,
 				7C53B30B2BDFA0B000BBFEA2 /* DayModule.swift in Sources */,
 				7C77125A2B91F100002AB97E /* AppDelegate.swift in Sources */,
-				7C535B632BE112C10072134D /* PlantViewController.swift in Sources */,
+				7C535B632BE112C10072134D /* PlantTableViewController.swift in Sources */,
 				7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */,
 				7C53B3092BDBCBCF00BBFEA2 /* ReminderButton.swift in Sources */,
 				7C9725922BE25337006AA86E /* ReminderStruct.swift in Sources */,
+				7C9EC3312BEA22B1009C142C /* Assembly.swift in Sources */,
 				7C77125C2B91F100002AB97E /* SceneDelegate.swift in Sources */,
+				7C9EC3332BEB6887009C142C /* PlantsPresenter.swift in Sources */,
 				7C53B3022BBEDFE100BBFEA2 /* TagView.swift in Sources */,
 				7C9BEADC2BE4DFD600CCDFD3 /* TagStruct.swift in Sources */,
 				7C9725982BE38BA9006AA86E /* ReminderTableViewCell.swift in Sources */,

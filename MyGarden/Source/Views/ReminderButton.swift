@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class ReminderButton: UIView {
+    
     private lazy var buttonText: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
@@ -30,6 +31,15 @@ class ReminderButton: UIView {
         view.backgroundColor = .reminderGray
         return view
     }()
+    
+    var color: UIColor {
+        get { return buttonText.textColor }
+        set {
+            buttonText.textColor = newValue
+            plusImageView.tintColor = newValue
+            lineView.backgroundColor = newValue
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

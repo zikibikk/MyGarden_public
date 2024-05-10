@@ -27,6 +27,6 @@ extension ReminderTableViewCell {
         }
         
         contentView.snp.makeConstraints({$0.bottom.equalTo(reminderView)})
-        contentView.snp.makeConstraints({$0.width.equalToSuperview()})
+//        contentView.snp.makeConstraints({$0.width.equalToSuperview()})
     }
 }

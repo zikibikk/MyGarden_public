@@ -18,16 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
            
         let window = UIWindow(windowScene: windowScene)
-        let notePresenter = MockDayPresenter()
         
-        let noteViewController = DayTableViewController(presenter: notePresenter)
-        notePresenter.viewInput = noteViewController
-        window.rootViewController = noteViewController
-        
-//        let noteViewController = DayViewController(notePresenter: notePresenter)
-//        notePresenter.viewInput = noteViewController
-//        let mainViewController = MainViewController()
-//        window.rootViewController = mainViewController
+        let plantMockPresenter = MockPlantPresenter()
+        let plantViewController = PlantTableViewController(presenter: plantMockPresenter)
+        plantMockPresenter.viewInput = plantViewController
+        window.rootViewController = plantViewController
+//        
+//        let noteViewController = DayAssembly.assemble()
+//        window.rootViewController = noteViewController
         
         self.window = window
         window.makeKeyAndVisible()

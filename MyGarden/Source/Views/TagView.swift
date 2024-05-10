@@ -17,10 +17,10 @@ class TagView: UIView {
         return label
     }()
     
-    var tagStruct: TagStruct? {
+    var tagStruct: TagStruct {
         set { 
-            tagLabel.text = newValue?.name.lowercased()
-            self.backgroundColor = newValue?.color
+            tagLabel.text = newValue.name.lowercased()
+            self.backgroundColor = newValue.color
         }
         get { return .init(name: tagLabel.text ?? "", color: self.backgroundColor ?? UIColor())}
     }

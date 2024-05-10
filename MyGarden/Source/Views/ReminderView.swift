@@ -12,6 +12,7 @@ class RemindView: UIView {
     
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
+        label.font = .noteFont
         label.numberOfLines = 1
         label.textColor = .black
         label.textAlignment = .left
@@ -20,6 +21,7 @@ class RemindView: UIView {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
+        label.font = .noteFont
         label.numberOfLines = 3
         label.textColor = .black
         label.textAlignment = .left
@@ -61,7 +63,7 @@ extension RemindView {
         //левый отступ приввязан к супервью, а не ко времени, чтобы не зависело от ширины времени
         
         rhombusImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(60)
+            make.leading.equalTo(timeLabel.snp.trailing).offset(10)
             make.centerY.equalTo(timeLabel)
         }
         
