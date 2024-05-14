@@ -5,7 +5,17 @@
 //  Created by Alina Bikkinina on 08.05.2024.
 //
 
-import Foundation
+import UIKit
+
+protocol iListOfPlantsView: UIViewController {
+    func getListOfPlants(plantsNames: [String])
+}
+
+protocol iListOfPlantsPresenter {
+    var listViewInput: iListOfPlantsView? { get set }
+    func viewDidLoad()
+    func selectedPlant(plant: String)
+}
 
 protocol iPlantView: AnyObject {
     func updateContent()
@@ -17,5 +27,7 @@ protocol iPlantView: AnyObject {
 
 protocol iPlantPresenter {
     var viewInput: iPlantView? { get set }
-    func viewWillAppear()
+    var plant: String { get }
+    func viewDidLoad()
+    init(plant: String)
 }

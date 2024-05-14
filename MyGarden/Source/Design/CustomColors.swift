@@ -10,8 +10,12 @@ import UIKit
 extension UIColor {
     
     static var lightGreen: UIColor {
-        return UIColor(red: 78/255, green: 161/255, blue: 101/255, alpha: 0.29)
+        return UIColor(red: 204/255, green: 228/255, blue: 210/255, alpha: 1)
     }
+    
+//    static var lightGreen: UIColor {
+//        return UIColor(red: 78/255, green: 161/255, blue: 101/255, alpha: 0.29)
+//    }
     
     static var myGreen: UIColor {
         return UIColor(red: 78/255, green: 161/255, blue: 101/255, alpha: 1)

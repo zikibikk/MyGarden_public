@@ -10,7 +10,7 @@ import Foundation
 class MockDayPresenter: iDayPresenter {
     weak var viewInput: iNoteView?
     
-    func viewWillAppear() {
+    func viewDidLoad() {
         viewInput?.getDate(dateText: "Сегодня, 29 апреля")
         viewInput?.getNoteText(noteText: "Высадила семена томата в стаканчики. Очень долго шли из Самары, и теперь надо успеть до конца следующей недели вырастить крепкие саженцы: погоду обещают хорошую, снег быстрее растает. Обрезала сухие ветки ежевики, вечером сожгла.")
         viewInput?.getReminders(remindersStruct: [
@@ -30,33 +30,8 @@ class MockDayPresenter: iDayPresenter {
     }
 }
 
-class NoteRepository {
-    
-}
-
-class NoteService: iNoteService {
-    
-    let repository: iNoteRepository
-    let fillerString = "Начните писать заметку на сегодня"
-    
-    init(repository: iNoteRepository) {
-        self.repository = repository
-    }
-    
-    func saveNote(noteText: String?) {
-        repository.saveNote()
-    }
-    
-    func returnNoteByDate(date: Date) -> String {
-        return repository.returnNoteByDate() ?? fillerString
-    }
-}
-
 
 class DayPresenter: iDayPresenter {
-    func viewWillAppear() {
-        
-    }
     
     
     private var noteDate: Date

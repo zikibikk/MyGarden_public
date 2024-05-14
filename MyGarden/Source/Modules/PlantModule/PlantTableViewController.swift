@@ -39,19 +39,23 @@ class PlantTableViewController: UIViewController {
         return tableView
     }()
     
+    override func loadView() {
+        super.loadView()
+        view = tableView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppear()
     }
     
     init(presenter: iPlantPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
-    }
-    
-    override func loadView() {
-        super.loadView()
-        view = tableView
     }
     
     required init?(coder: NSCoder) {
@@ -79,7 +83,7 @@ extension PlantTableViewController: UITableViewDataSource, UITableViewDelegate {
             let reminderButtonCell = tableView.dequeueReusableCell(withIdentifier: "\(ReminderButtonTableViewCell.self)", for: indexPath) as! ReminderButtonTableViewCell
             reminderButtonCell.color = .myGreen
             return reminderButtonCell
-//            
+
         case .reminder:
             let reminderCell = tableView.dequeueReusableCell(withIdentifier: "\(ReminderTableViewCell.self)", for: indexPath) as! ReminderTableViewCell
             reminderCell.configureCell(time: model.1[0], text: model.1[1])
@@ -130,7 +134,7 @@ extension PlantTableViewController: iPlantView {
     }
     
     func getPlant(plant: String) {
-        (models.first != nil) ? models[0] = (PlantModels.plantName, [plant]) : models.append((PlantModels.plantName, [plant]))
+        self.title = plant
     }
     
     

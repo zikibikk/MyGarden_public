@@ -15,18 +15,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-           
-        let window = UIWindow(windowScene: windowScene)
-        
-        let plantMockPresenter = MockPlantPresenter()
-        let plantViewController = PlantTableViewController(presenter: plantMockPresenter)
-        plantMockPresenter.viewInput = plantViewController
-        window.rootViewController = plantViewController
+//        let serv = NoteService.shared
+//        serv.testWork()
 //        
-//        let noteViewController = DayAssembly.assemble()
-//        window.rootViewController = noteViewController
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        let tabBarController = UITabBarController()
         
+        tabBarController.viewControllers = [DayAssembly.assemble(), ListOfPlantAssembly.assemble()]
+        tabBarController.tabBar.tintColor = .black
+        tabBarController.tabBar.barTintColor = .white
+        
+        guard let items = tabBarController.tabBar.items else { return }
+        items[0].image = UIImage(systemName: "scribble.variable")
+        items[1].image = UIImage(systemName: "calendar")
+        
+        window.rootViewController = tabBarController
         self.window = window
         window.makeKeyAndVisible()
     }

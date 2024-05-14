@@ -18,7 +18,7 @@ protocol iNoteView: AnyObject {
 
 protocol iDayPresenter {
     var viewInput: iNoteView? { get set }
-    func viewWillAppear()
+    func viewDidLoad()
     func viewWillDisapear()
 }
 
@@ -28,6 +28,10 @@ protocol iNoteService {
 }
 
 protocol iNoteRepository {
-    func saveNote()
-    func returnNoteByDate() -> String?
+    func createNote(id: Int16, note: NoteStruct)
+    func fetchNotes() -> [NoteEntity]
+    func fetchNote(with date: Date) -> NoteEntity?
+    func updateNote(with date: Date, newText: String)
+    func deleteAllNotes()
+    func deleteNote(with date: Date)
 }

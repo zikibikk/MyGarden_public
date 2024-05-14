@@ -29,5 +29,12 @@ extension UIFont {
         return UIFont(name: "Roboto-Bold", size: 20)!
     }
     
+    static var plantTitle: UIFont {
+        return UIFont(name: "Roboto-Bold", size: 30)!
+    }
+    
+    static var plantListFont: UIFont {
+        return UIFont(name: "Roboto", size: 20)!
+    }
     
 }

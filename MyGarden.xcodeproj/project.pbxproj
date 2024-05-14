@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3B94C92BF34D390017D620 /* PlantAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94C82BF34D390017D620 /* PlantAssembly.swift */; };
+		7C3B94CB2BF36B580017D620 /* ListOfPlantTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94CA2BF36B580017D620 /* ListOfPlantTVC.swift */; };
+		7C3B94CD2BF378FC0017D620 /* PlantTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94CC2BF378FC0017D620 /* PlantTVC.swift */; };
+		7C3B94CF2BF3CF690017D620 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94CE2BF3CF690017D620 /* NoteService.swift */; };
 		7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */; };
 		7C535B632BE112C10072134D /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B622BE112C10072134D /* PlantTableViewController.swift */; };
 		7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B642BE2403E0072134D /* DayTableViewController.swift */; };
@@ -34,12 +38,12 @@
 		7C7712802B91F102002AB97E /* MyGardenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77127F2B91F102002AB97E /* MyGardenUITestsLaunchTests.swift */; };
 		7C9725922BE25337006AA86E /* ReminderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725912BE25337006AA86E /* ReminderStruct.swift */; };
 		7C9725942BE2606D006AA86E /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */; };
-		7C9725962BE38248006AA86E /* RemindButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */; };
+		7C9725962BE38248006AA86E /* ButtonReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725952BE38248006AA86E /* ButtonReminderTableViewCell.swift */; };
 		7C9725982BE38BA9006AA86E /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */; };
 		7C9BEADC2BE4DFD600CCDFD3 /* TagStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */; };
 		7C9EC32C2BE62DEE009C142C /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */; };
 		7C9EC32F2BE62E5E009C142C /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */; };
-		7C9EC3312BEA22B1009C142C /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3302BEA22B1009C142C /* Assembly.swift */; };
+		7C9EC3312BEA22B1009C142C /* DayAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3302BEA22B1009C142C /* DayAssembly.swift */; };
 		7C9EC3332BEB6887009C142C /* PlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */; };
 		7C9EC3352BEB689C009C142C /* PlantsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3342BEB689C009C142C /* PlantsModule.swift */; };
 		7C9EC3372BEB99D5009C142C /* FixedPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */; };
@@ -49,6 +53,15 @@
 		7C9EC35A2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
 		7C9EC35B2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
 		7C9EC35C2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
+		7C9EC35E2BEE210F009C142C /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */; };
+		7C9EC35F2BEE210F009C142C /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */; };
+		7C9EC3602BEE210F009C142C /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */; };
+		7C9EC3632BEF54F4009C142C /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3622BEF54F4009C142C /* NoteEntity.swift */; };
+		7C9EC3642BEF54F4009C142C /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3622BEF54F4009C142C /* NoteEntity.swift */; };
+		7C9EC3652BEF54F4009C142C /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3622BEF54F4009C142C /* NoteEntity.swift */; };
+		7C9EC36B2BEF5B06009C142C /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC36A2BEF5B06009C142C /* NoteRepository.swift */; };
+		7C9EC36C2BEF5B06009C142C /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC36A2BEF5B06009C142C /* NoteRepository.swift */; };
+		7C9EC36D2BEF5B06009C142C /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC36A2BEF5B06009C142C /* NoteRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +82,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C3B94C82BF34D390017D620 /* PlantAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantAssembly.swift; sourceTree = "<group>"; };
+		7C3B94CA2BF36B580017D620 /* ListOfPlantTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlantTVC.swift; sourceTree = "<group>"; };
+		7C3B94CC2BF378FC0017D620 /* PlantTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTVC.swift; sourceTree = "<group>"; };
+		7C3B94CE2BF3CF690017D620 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
 		7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		7C535B622BE112C10072134D /* PlantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewController.swift; sourceTree = "<group>"; };
 		7C535B642BE2403E0072134D /* DayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
@@ -96,17 +113,20 @@
 		7C77127F2B91F102002AB97E /* MyGardenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7C9725912BE25337006AA86E /* ReminderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStruct.swift; sourceTree = "<group>"; };
 		7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
-		7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindButtonTableViewCell.swift; sourceTree = "<group>"; };
+		7C9725952BE38248006AA86E /* ButtonReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReminderTableViewCell.swift; sourceTree = "<group>"; };
 		7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStruct.swift; sourceTree = "<group>"; };
 		7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
 		7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
-		7C9EC3302BEA22B1009C142C /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		7C9EC3302BEA22B1009C142C /* DayAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayAssembly.swift; sourceTree = "<group>"; };
 		7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsPresenter.swift; sourceTree = "<group>"; };
 		7C9EC3342BEB689C009C142C /* PlantsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModule.swift; sourceTree = "<group>"; };
 		7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedPlantTableViewCell.swift; sourceTree = "<group>"; };
 		7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RobotoFlex.ttf; sourceTree = "<group>"; };
 		7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		7C9EC3622BEF54F4009C142C /* NoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
+		7C9EC36A2BEF5B06009C142C /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				7C535B622BE112C10072134D /* PlantTableViewController.swift */,
+				7C3B94CA2BF36B580017D620 /* ListOfPlantTVC.swift */,
 				7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */,
 				7C9EC3342BEB689C009C142C /* PlantsModule.swift */,
+				7C3B94C82BF34D390017D620 /* PlantAssembly.swift */,
 			);
 			path = PlantModule;
 			sourceTree = "<group>";
@@ -154,7 +176,7 @@
 				7C9EC3382BEB9CD7009C142C /* PlantTableView */,
 				7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */,
 				7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */,
-				7C9725952BE38248006AA86E /* RemindButtonTableViewCell.swift */,
+				7C9725952BE38248006AA86E /* ButtonReminderTableViewCell.swift */,
 				7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */,
 				7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */,
 			);
@@ -164,10 +186,8 @@
 		7C53B2F02BB6EFB600BBFEA2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7C97258F2BE2530D006AA86E /* Models */,
-				7C535B662BE244270072134D /* Cells */,
-				7C535B612BE112A20072134D /* PlantModule */,
-				7C53B3032BC014D800BBFEA2 /* DayModule */,
+				7C9EC3672BEF5A75009C142C /* DataLayer */,
+				7C9EC3662BEF5990009C142C /* Modules */,
 				7C53B2F42BB6EFFE00BBFEA2 /* Views */,
 				7C53B2F12BB6EFC900BBFEA2 /* Design */,
 			);
@@ -186,6 +206,7 @@
 		7C53B2F42BB6EFFE00BBFEA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C535B662BE244270072134D /* Cells */,
 				7C53B2F52BB6F01000BBFEA2 /* NoteView.swift */,
 				7C53B2F72BB8251900BBFEA2 /* ReminderView.swift */,
 				7C53B3012BBEDFE100BBFEA2 /* TagView.swift */,
@@ -219,7 +240,8 @@
 				7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */,
 				7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */,
 				7C535B642BE2403E0072134D /* DayTableViewController.swift */,
-				7C9EC3302BEA22B1009C142C /* Assembly.swift */,
+				7C9EC3302BEA22B1009C142C /* DayAssembly.swift */,
+				7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */,
 			);
 			path = DayModule;
 			sourceTree = "<group>";
@@ -280,6 +302,7 @@
 		7C97258F2BE2530D006AA86E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7C9EC3612BEF54D0009C142C /* Entities */,
 				7C9725902BE25318006AA86E /* Structs */,
 			);
 			path = Models;
@@ -298,8 +321,52 @@
 			isa = PBXGroup;
 			children = (
 				7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */,
+				7C3B94CC2BF378FC0017D620 /* PlantTVC.swift */,
 			);
 			path = PlantTableView;
+			sourceTree = "<group>";
+		};
+		7C9EC3612BEF54D0009C142C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7C9EC3622BEF54F4009C142C /* NoteEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		7C9EC3662BEF5990009C142C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7C535B612BE112A20072134D /* PlantModule */,
+				7C53B3032BC014D800BBFEA2 /* DayModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7C9EC3672BEF5A75009C142C /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				7C9EC3692BEF5A9D009C142C /* Services */,
+				7C9EC3682BEF5A90009C142C /* Repositories */,
+				7C97258F2BE2530D006AA86E /* Models */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		7C9EC3682BEF5A90009C142C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7C9EC36A2BEF5B06009C142C /* NoteRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		7C9EC3692BEF5A9D009C142C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7C3B94CE2BF3CF690017D620 /* NoteService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,26 +518,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */,
+				7C3B94CF2BF3CF690017D620 /* NoteService.swift in Sources */,
+				7C3B94C92BF34D390017D620 /* PlantAssembly.swift in Sources */,
 				7C53B2FE2BBED99500BBFEA2 /* CustomFonts.swift in Sources */,
 				7C7712642B91F100002AB97E /* MyGarden.xcdatamodeld in Sources */,
 				7C53B3072BC1F4B900BBFEA2 /* DayPresenter.swift in Sources */,
 				7C9EC32F2BE62E5E009C142C /* TagTableViewCell.swift in Sources */,
 				7C9EC32C2BE62DEE009C142C /* TagCollectionView.swift in Sources */,
+				7C3B94CB2BF36B580017D620 /* ListOfPlantTVC.swift in Sources */,
 				7C9725942BE2606D006AA86E /* NoteTableViewCell.swift in Sources */,
 				7C53B2F32BB6EFDB00BBFEA2 /* CustomColors.swift in Sources */,
 				7C9EC3352BEB689C009C142C /* PlantsModule.swift in Sources */,
+				7C9EC35E2BEE210F009C142C /* TableViewExtension.swift in Sources */,
 				7C53B2F62BB6F01000BBFEA2 /* NoteView.swift in Sources */,
+				7C9EC36B2BEF5B06009C142C /* NoteRepository.swift in Sources */,
 				7C53B2F82BB8251900BBFEA2 /* ReminderView.swift in Sources */,
-				7C9725962BE38248006AA86E /* RemindButtonTableViewCell.swift in Sources */,
+				7C9725962BE38248006AA86E /* ButtonReminderTableViewCell.swift in Sources */,
 				7C77125E2B91F100002AB97E /* MainViewController.swift in Sources */,
 				7C9EC3372BEB99D5009C142C /* FixedPlantTableViewCell.swift in Sources */,
 				7C53B30B2BDFA0B000BBFEA2 /* DayModule.swift in Sources */,
 				7C77125A2B91F100002AB97E /* AppDelegate.swift in Sources */,
 				7C535B632BE112C10072134D /* PlantTableViewController.swift in Sources */,
+				7C3B94CD2BF378FC0017D620 /* PlantTVC.swift in Sources */,
 				7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */,
 				7C53B3092BDBCBCF00BBFEA2 /* ReminderButton.swift in Sources */,
+				7C9EC3632BEF54F4009C142C /* NoteEntity.swift in Sources */,
 				7C9725922BE25337006AA86E /* ReminderStruct.swift in Sources */,
-				7C9EC3312BEA22B1009C142C /* Assembly.swift in Sources */,
+				7C9EC3312BEA22B1009C142C /* DayAssembly.swift in Sources */,
 				7C77125C2B91F100002AB97E /* SceneDelegate.swift in Sources */,
 				7C9EC3332BEB6887009C142C /* PlantsPresenter.swift in Sources */,
 				7C53B3022BBEDFE100BBFEA2 /* TagView.swift in Sources */,
@@ -484,6 +558,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C7712742B91F102002AB97E /* MyGardenTests.swift in Sources */,
+				7C9EC36C2BEF5B06009C142C /* NoteRepository.swift in Sources */,
+				7C9EC35F2BEE210F009C142C /* TableViewExtension.swift in Sources */,
+				7C9EC3642BEF54F4009C142C /* NoteEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +568,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C9EC36D2BEF5B06009C142C /* NoteRepository.swift in Sources */,
+				7C9EC3652BEF54F4009C142C /* NoteEntity.swift in Sources */,
+				7C9EC3602BEE210F009C142C /* TableViewExtension.swift in Sources */,
 				7C7712802B91F102002AB97E /* MyGardenUITestsLaunchTests.swift in Sources */,
 				7C77127E2B91F102002AB97E /* MyGardenUITests.swift in Sources */,
 			);
