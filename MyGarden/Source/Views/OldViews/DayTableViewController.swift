@@ -103,6 +103,7 @@ extension DayTableViewController: iNoteView {
         models.append((ModelTypes.subtitle, ["Растения"]))
         models.append((ModelTypes.plants, []))
         tags = tagsStruct
+        updateContent()
     }
         
     func returnCurrentNoteText() -> String? {

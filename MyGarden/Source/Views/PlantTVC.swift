@@ -38,9 +38,8 @@ extension PlantTableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(25)
             make.top.equalToSuperview().inset(25)
+            make.bottom.equalToSuperview().inset(10)
         }
-        
-        contentView.snp.makeConstraints({$0.bottom.equalTo(titleLabel).offset(10)})
     }
 }
 

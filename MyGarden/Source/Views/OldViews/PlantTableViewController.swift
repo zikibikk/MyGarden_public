@@ -123,7 +123,7 @@ extension PlantTableViewController: iPlantView {
     }
     
     
-    func getFixedReminders(fixedReminders: [ReminderStruct]) {
+    func getFixedDates(fixedReminders: [ReminderStruct]) {
         for fixedReminder in fixedReminders {
             models.append((PlantModels.fixed, [fixedReminder.reminderDate, fixedReminder.reminderText]))
         }
