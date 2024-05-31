@@ -11,7 +11,7 @@ import SnapKit
 class ListOfPlantTVC: UIViewController {
     
     private let presenter: iListOfPlantsPresenter
-    private var plantNames: [String] = []
+    private var plants: [PlantStruct] = []
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
@@ -52,26 +52,25 @@ class ListOfPlantTVC: UIViewController {
 extension ListOfPlantTVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        plantNames.count
+        plants.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let plant = PlantTableViewCell()
-        
-        plant.text = plantNames[indexPath.row]
-        
+        plant.text = plants[indexPath.row].name
         return  plant
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.selectedPlant(plant: plantNames[indexPath.row])
+        presenter.selectedPlant(plant: plants[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension ListOfPlantTVC: iListOfPlantsView {
-    func getListOfPlants(plantsNames: [String]) {
-        self.plantNames = plantsNames
+
+    func getListOfPlants(plants: [PlantStruct]) {
+        self.plants = plants
     }
 }
 
