@@ -8,12 +8,22 @@
 import UIKit
 import SnapKit
 
+protocol TagViewDelegate {
+    func pressedTag(id: UUID, title: String)
+}
+
+protocol TagCollectionViewDelegate {
+    func pressedTag(id: UUID)
+    func addTag()
+}
+
 class TagCollectionView: UIView {
     private let rowSpacing = 7
     private var lineSpacing = 10
+    private var tagViews: [[TagView]] = [[]]
     
     var tagsStruct: [TagStruct] = []
-    private var tagViews: [[TagView]] = [[]]
+    var tagCollectionDelegate: TagCollectionViewDelegate?
     var hasLayoutedSubviews = false
 //    private var finalTag: TagView = {
 //        let tag = TagView()
@@ -35,7 +45,18 @@ class TagCollectionView: UIView {
     }
 }
 
+extension TagCollectionView: TagViewDelegate {
+    func pressedTag(id: UUID, title: String) {
+        if(title == "+") {
+            tagCollectionDelegate?.addTag()
+        } else {
+            tagCollectionDelegate?.pressedTag(id: id)
+        }
+    }
+}
+
 extension TagCollectionView {
+    
     private func calculateViews() {
         
         let viewWidth = Int(self.bounds.width)
@@ -45,6 +66,8 @@ extension TagCollectionView {
         tagsStruct = tagsStruct.sorted { s1, s2 in
             s1.name.count > s2.name.count
         }
+        
+        tagsStruct.append(.init(name: "+", color: .lightGreen))
         
         for tagStruct in self.tagsStruct {
             let tagViewToInsert = TagView()
@@ -76,6 +99,7 @@ extension TagCollectionView {
         for i in 0..<tagViews.count {
             for j in 1..<tagViews[i].count {
                 self.addSubview(tagViews[i][j])
+                tagViews[i][j].tagViewDelegate = self
                 tagViews[i][j].snp.makeConstraints { make in
                     make.top.equalTo(tagViews[i][j-1])
                     make.left.equalTo(tagViews[i][j-1].snp.right).offset(rowSpacing)
@@ -84,7 +108,6 @@ extension TagCollectionView {
         }
         hasLayoutedSubviews = true
         addBottomConstraints()
-        printTagViews()
     }
     
     private func printTagViews() {
