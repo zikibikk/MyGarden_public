@@ -59,6 +59,8 @@ extension TagView {
     
     private func makeAddButton() {
         
+        self.backgroundColor = .lightGreen
+        
         tagLabel.removeFromSuperview()
         
         let imageView = UIImageView(image: UIImage(systemName: "plus"))
@@ -79,7 +81,7 @@ extension TagView {
     }
     
     private func setUp() {
-        self.layer.cornerRadius = 13
+        self.layer.cornerRadius = 14
         self.addSubview(tagLabel)
         
         tagLabel.snp.makeConstraints { make in

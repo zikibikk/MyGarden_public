@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C18DACA2BF4AA2400BDC705 /* MyGarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DAC82BF4AA2400BDC705 /* MyGarden.xcdatamodeld */; };
+		7C18DACC2BF4CFA700BDC705 /* DayScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DACB2BF4CFA700BDC705 /* DayScrollController.swift */; };
+		7C18DACE2BF63B0000BDC705 /* PlantScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DACD2BF63B0000BDC705 /* PlantScrollViewController.swift */; };
+		7C18DAD02BF76F6F00BDC705 /* FixedDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DACF2BF76F6F00BDC705 /* FixedDatesView.swift */; };
+		7C18DAD32BF8BB4F00BDC705 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DAD22BF8BB4F00BDC705 /* AddReminderViewController.swift */; };
+		7C18DAD62BFF63FC00BDC705 /* PlantEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DAD52BFF63FC00BDC705 /* PlantEntity.swift */; };
+		7C18DAD82C04984600BDC705 /* ReminderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DAD72C04984600BDC705 /* ReminderEntity.swift */; };
+		7C18DADA2C049AB600BDC705 /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DAD92C049AB600BDC705 /* ReminderRepository.swift */; };
+		7C18DADC2C05EE3F00BDC705 /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18DADB2C05EE3F00BDC705 /* ReminderService.swift */; };
+		7C1C2FA12C0C96D9009FAEED /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C2FA02C0C96D9009FAEED /* Repository.swift */; };
+		7C1C2FA62C0CF949009FAEED /* TagCollectionViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C2FA52C0CF949009FAEED /* TagCollectionViewModule.swift */; };
+		7C1C2FA92C0DC02F009FAEED /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C2FA82C0DC02F009FAEED /* TagViewController.swift */; };
+		7C1C2FAB2C0DC048009FAEED /* TagsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C2FAA2C0DC048009FAEED /* TagsPresenter.swift */; };
+		7C1C2FAD2C0DC08C009FAEED /* TagsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C2FAC2C0DC08C009FAEED /* TagsModule.swift */; };
+		7C1C2FAF2C0DC0F5009FAEED /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C2FAE2C0DC0F5009FAEED /* TagService.swift */; };
+		7C2DD4FB2C0B2EFA00C2F37D /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DD4FA2C0B2EFA00C2F37D /* TagRepository.swift */; };
 		7C3B94C92BF34D390017D620 /* PlantAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94C82BF34D390017D620 /* PlantAssembly.swift */; };
 		7C3B94CB2BF36B580017D620 /* ListOfPlantTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94CA2BF36B580017D620 /* ListOfPlantTVC.swift */; };
 		7C3B94CD2BF378FC0017D620 /* PlantTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94CC2BF378FC0017D620 /* PlantTVC.swift */; };
 		7C3B94CF2BF3CF690017D620 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B94CE2BF3CF690017D620 /* NoteService.swift */; };
-		7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */; };
-		7C535B632BE112C10072134D /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B622BE112C10072134D /* PlantTableViewController.swift */; };
-		7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C535B642BE2403E0072134D /* DayTableViewController.swift */; };
 		7C53B2E62BADB5B300BBFEA2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2E52BADB5B300BBFEA2 /* SnapKit */; };
 		7C53B2E82BADB5B300BBFEA2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2E72BADB5B300BBFEA2 /* SnapKit-Dynamic */; };
 		7C53B2EC2BADB65A00BBFEA2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C53B2EB2BADB65A00BBFEA2 /* SnapKit */; };
@@ -30,32 +43,28 @@
 		7C77125A2B91F100002AB97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7712592B91F100002AB97E /* AppDelegate.swift */; };
 		7C77125C2B91F100002AB97E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77125B2B91F100002AB97E /* SceneDelegate.swift */; };
 		7C77125E2B91F100002AB97E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77125D2B91F100002AB97E /* MainViewController.swift */; };
-		7C7712642B91F100002AB97E /* MyGarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C7712622B91F100002AB97E /* MyGarden.xcdatamodeld */; };
 		7C7712662B91F102002AB97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7712652B91F102002AB97E /* Assets.xcassets */; };
 		7C7712692B91F102002AB97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7712672B91F102002AB97E /* LaunchScreen.storyboard */; };
 		7C7712742B91F102002AB97E /* MyGardenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7712732B91F102002AB97E /* MyGardenTests.swift */; };
 		7C77127E2B91F102002AB97E /* MyGardenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77127D2B91F102002AB97E /* MyGardenUITests.swift */; };
 		7C7712802B91F102002AB97E /* MyGardenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C77127F2B91F102002AB97E /* MyGardenUITestsLaunchTests.swift */; };
-		7C9725922BE25337006AA86E /* ReminderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725912BE25337006AA86E /* ReminderStruct.swift */; };
-		7C9725942BE2606D006AA86E /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */; };
-		7C9725962BE38248006AA86E /* ButtonReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725952BE38248006AA86E /* ButtonReminderTableViewCell.swift */; };
-		7C9725982BE38BA9006AA86E /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */; };
-		7C9BEADC2BE4DFD600CCDFD3 /* TagStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */; };
+		7C7A90C32C066D4600A8786D /* ReminderModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A90C22C066D4600A8786D /* ReminderModule.swift */; };
+		7C82BDF32C0749D00023F09E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82BDF22C0749D00023F09E /* CalendarViewController.swift */; };
+		7C82BDF52C0767F00023F09E /* CalendarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82BDF42C0767F00023F09E /* CalendarAssembly.swift */; };
+		7C82BDF72C090D800023F09E /* PlantRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82BDF62C090D800023F09E /* PlantRepository.swift */; };
+		7C82BDF92C09EC720023F09E /* PlantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82BDF82C09EC720023F09E /* PlantService.swift */; };
+		7C82BDFC2C0A15460023F09E /* ListOfPlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82BDFB2C0A15460023F09E /* ListOfPlantsPresenter.swift */; };
+		7C82BDFF2C0A65900023F09E /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82BDFE2C0A65900023F09E /* TagEntity.swift */; };
 		7C9EC32C2BE62DEE009C142C /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */; };
-		7C9EC32F2BE62E5E009C142C /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */; };
 		7C9EC3312BEA22B1009C142C /* DayAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3302BEA22B1009C142C /* DayAssembly.swift */; };
 		7C9EC3332BEB6887009C142C /* PlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */; };
 		7C9EC3352BEB689C009C142C /* PlantsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3342BEB689C009C142C /* PlantsModule.swift */; };
-		7C9EC3372BEB99D5009C142C /* FixedPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */; };
 		7C9EC33E2BECD870009C142C /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */; };
 		7C9EC33F2BECD870009C142C /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */; };
 		7C9EC3402BECD870009C142C /* RobotoFlex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */; };
 		7C9EC35A2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
 		7C9EC35B2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
 		7C9EC35C2BECDDFC009C142C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */; };
-		7C9EC35E2BEE210F009C142C /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */; };
-		7C9EC35F2BEE210F009C142C /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */; };
-		7C9EC3602BEE210F009C142C /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */; };
 		7C9EC3632BEF54F4009C142C /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3622BEF54F4009C142C /* NoteEntity.swift */; };
 		7C9EC3642BEF54F4009C142C /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3622BEF54F4009C142C /* NoteEntity.swift */; };
 		7C9EC3652BEF54F4009C142C /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EC3622BEF54F4009C142C /* NoteEntity.swift */; };
@@ -82,13 +91,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C18DAC92BF4AA2400BDC705 /* MyGarden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyGarden.xcdatamodel; sourceTree = "<group>"; };
+		7C18DACB2BF4CFA700BDC705 /* DayScrollController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayScrollController.swift; sourceTree = "<group>"; };
+		7C18DACD2BF63B0000BDC705 /* PlantScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantScrollViewController.swift; sourceTree = "<group>"; };
+		7C18DACF2BF76F6F00BDC705 /* FixedDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedDatesView.swift; sourceTree = "<group>"; };
+		7C18DAD22BF8BB4F00BDC705 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
+		7C18DAD52BFF63FC00BDC705 /* PlantEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEntity.swift; sourceTree = "<group>"; };
+		7C18DAD72C04984600BDC705 /* ReminderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEntity.swift; sourceTree = "<group>"; };
+		7C18DAD92C049AB600BDC705 /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
+		7C18DADB2C05EE3F00BDC705 /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
+		7C1C2FA02C0C96D9009FAEED /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		7C1C2FA52C0CF949009FAEED /* TagCollectionViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewModule.swift; sourceTree = "<group>"; };
+		7C1C2FA82C0DC02F009FAEED /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		7C1C2FAA2C0DC048009FAEED /* TagsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsPresenter.swift; sourceTree = "<group>"; };
+		7C1C2FAC2C0DC08C009FAEED /* TagsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsModule.swift; sourceTree = "<group>"; };
+		7C1C2FAE2C0DC0F5009FAEED /* TagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
+		7C2DD4FA2C0B2EFA00C2F37D /* TagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
 		7C3B94C82BF34D390017D620 /* PlantAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantAssembly.swift; sourceTree = "<group>"; };
 		7C3B94CA2BF36B580017D620 /* ListOfPlantTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlantTVC.swift; sourceTree = "<group>"; };
 		7C3B94CC2BF378FC0017D620 /* PlantTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTVC.swift; sourceTree = "<group>"; };
 		7C3B94CE2BF3CF690017D620 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
-		7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
-		7C535B622BE112C10072134D /* PlantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewController.swift; sourceTree = "<group>"; };
-		7C535B642BE2403E0072134D /* DayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
 		7C53B2F22BB6EFDB00BBFEA2 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		7C53B2F52BB6F01000BBFEA2 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		7C53B2F72BB8251900BBFEA2 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
@@ -102,7 +124,6 @@
 		7C7712592B91F100002AB97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C77125B2B91F100002AB97E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C77125D2B91F100002AB97E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7C7712632B91F100002AB97E /* MyGarden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyGarden.xcdatamodel; sourceTree = "<group>"; };
 		7C7712652B91F102002AB97E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C7712682B91F102002AB97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C77126A2B91F102002AB97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,20 +132,19 @@
 		7C7712792B91F102002AB97E /* MyGardenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGardenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C77127D2B91F102002AB97E /* MyGardenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenUITests.swift; sourceTree = "<group>"; };
 		7C77127F2B91F102002AB97E /* MyGardenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		7C9725912BE25337006AA86E /* ReminderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStruct.swift; sourceTree = "<group>"; };
-		7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
-		7C9725952BE38248006AA86E /* ButtonReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReminderTableViewCell.swift; sourceTree = "<group>"; };
-		7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
-		7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStruct.swift; sourceTree = "<group>"; };
+		7C7A90C22C066D4600A8786D /* ReminderModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModule.swift; sourceTree = "<group>"; };
+		7C82BDF22C0749D00023F09E /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		7C82BDF42C0767F00023F09E /* CalendarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAssembly.swift; sourceTree = "<group>"; };
+		7C82BDF62C090D800023F09E /* PlantRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepository.swift; sourceTree = "<group>"; };
+		7C82BDF82C09EC720023F09E /* PlantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantService.swift; sourceTree = "<group>"; };
+		7C82BDFB2C0A15460023F09E /* ListOfPlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlantsPresenter.swift; sourceTree = "<group>"; };
+		7C82BDFE2C0A65900023F09E /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 		7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
-		7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		7C9EC3302BEA22B1009C142C /* DayAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayAssembly.swift; sourceTree = "<group>"; };
 		7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsPresenter.swift; sourceTree = "<group>"; };
 		7C9EC3342BEB689C009C142C /* PlantsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModule.swift; sourceTree = "<group>"; };
-		7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedPlantTableViewCell.swift; sourceTree = "<group>"; };
 		7C9EC33D2BECD870009C142C /* RobotoFlex.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RobotoFlex.ttf; sourceTree = "<group>"; };
 		7C9EC3592BECDDFC009C142C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		7C9EC3622BEF54F4009C142C /* NoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
 		7C9EC36A2BEF5B06009C142C /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,29 +178,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C18DAD12BF8BB3500BDC705 /* ReminderModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C18DAD22BF8BB4F00BDC705 /* AddReminderViewController.swift */,
+				7C7A90C22C066D4600A8786D /* ReminderModule.swift */,
+			);
+			path = ReminderModule;
+			sourceTree = "<group>";
+		};
+		7C1C2FA22C0CD171009FAEED /* TagCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7C1C2FA52C0CF949009FAEED /* TagCollectionViewModule.swift */,
+				7C53B3012BBEDFE100BBFEA2 /* TagView.swift */,
+				7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */,
+			);
+			path = TagCollectionView;
+			sourceTree = "<group>";
+		};
+		7C1C2FA72C0DC010009FAEED /* TagModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C1C2FAC2C0DC08C009FAEED /* TagsModule.swift */,
+				7C1C2FA82C0DC02F009FAEED /* TagViewController.swift */,
+				7C1C2FAA2C0DC048009FAEED /* TagsPresenter.swift */,
+			);
+			path = TagModule;
+			sourceTree = "<group>";
+		};
 		7C535B612BE112A20072134D /* PlantModule */ = {
 			isa = PBXGroup;
 			children = (
-				7C535B622BE112C10072134D /* PlantTableViewController.swift */,
-				7C3B94CA2BF36B580017D620 /* ListOfPlantTVC.swift */,
-				7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */,
-				7C9EC3342BEB689C009C142C /* PlantsModule.swift */,
 				7C3B94C82BF34D390017D620 /* PlantAssembly.swift */,
+				7C9EC3342BEB689C009C142C /* PlantsModule.swift */,
+				7C82BDFD2C0A156E0023F09E /* PlantModule */,
+				7C82BDFA2C0A15240023F09E /* ListOfPlants */,
 			);
 			path = PlantModule;
-			sourceTree = "<group>";
-		};
-		7C535B662BE244270072134D /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				7C9EC3382BEB9CD7009C142C /* PlantTableView */,
-				7C535B5F2BE0FE690072134D /* TitleTableViewCell.swift */,
-				7C9725932BE2606D006AA86E /* NoteTableViewCell.swift */,
-				7C9725952BE38248006AA86E /* ButtonReminderTableViewCell.swift */,
-				7C9725972BE38BA9006AA86E /* ReminderTableViewCell.swift */,
-				7C9EC32E2BE62E5E009C142C /* TagTableViewCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		7C53B2F02BB6EFB600BBFEA2 /* Source */ = {
@@ -206,12 +241,12 @@
 		7C53B2F42BB6EFFE00BBFEA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7C535B662BE244270072134D /* Cells */,
+				7C1C2FA22C0CD171009FAEED /* TagCollectionView */,
+				7C3B94CC2BF378FC0017D620 /* PlantTVC.swift */,
 				7C53B2F52BB6F01000BBFEA2 /* NoteView.swift */,
 				7C53B2F72BB8251900BBFEA2 /* ReminderView.swift */,
-				7C53B3012BBEDFE100BBFEA2 /* TagView.swift */,
 				7C53B3082BDBCBCF00BBFEA2 /* ReminderButton.swift */,
-				7C9EC32B2BE62DEE009C142C /* TagCollectionView.swift */,
+				7C18DACF2BF76F6F00BDC705 /* FixedDatesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,11 +272,10 @@
 		7C53B3032BC014D800BBFEA2 /* DayModule */ = {
 			isa = PBXGroup;
 			children = (
-				7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */,
-				7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */,
-				7C535B642BE2403E0072134D /* DayTableViewController.swift */,
 				7C9EC3302BEA22B1009C142C /* DayAssembly.swift */,
-				7C9EC35D2BEE210F009C142C /* TableViewExtension.swift */,
+				7C53B30A2BDFA0B000BBFEA2 /* DayModule.swift */,
+				7C53B3062BC1F4B900BBFEA2 /* DayPresenter.swift */,
+				7C18DACB2BF4CFA700BDC705 /* DayScrollController.swift */,
 			);
 			path = DayModule;
 			sourceTree = "<group>";
@@ -277,7 +311,7 @@
 				7C7712652B91F102002AB97E /* Assets.xcassets */,
 				7C7712672B91F102002AB97E /* LaunchScreen.storyboard */,
 				7C77126A2B91F102002AB97E /* Info.plist */,
-				7C7712622B91F100002AB97E /* MyGarden.xcdatamodeld */,
+				7C18DAC82BF4AA2400BDC705 /* MyGarden.xcdatamodeld */,
 			);
 			path = MyGarden;
 			sourceTree = "<group>";
@@ -299,37 +333,48 @@
 			path = MyGardenUITests;
 			sourceTree = "<group>";
 		};
+		7C82BDF12C0749A30023F09E /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				7C82BDF42C0767F00023F09E /* CalendarAssembly.swift */,
+				7C82BDF22C0749D00023F09E /* CalendarViewController.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		7C82BDFA2C0A15240023F09E /* ListOfPlants */ = {
+			isa = PBXGroup;
+			children = (
+				7C3B94CA2BF36B580017D620 /* ListOfPlantTVC.swift */,
+				7C82BDFB2C0A15460023F09E /* ListOfPlantsPresenter.swift */,
+			);
+			path = ListOfPlants;
+			sourceTree = "<group>";
+		};
+		7C82BDFD2C0A156E0023F09E /* PlantModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C9EC3322BEB6887009C142C /* PlantsPresenter.swift */,
+				7C18DACD2BF63B0000BDC705 /* PlantScrollViewController.swift */,
+			);
+			path = PlantModule;
+			sourceTree = "<group>";
+		};
 		7C97258F2BE2530D006AA86E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				7C9EC3612BEF54D0009C142C /* Entities */,
-				7C9725902BE25318006AA86E /* Structs */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		7C9725902BE25318006AA86E /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				7C9725912BE25337006AA86E /* ReminderStruct.swift */,
-				7C9BEADB2BE4DFD600CCDFD3 /* TagStruct.swift */,
-			);
-			path = Structs;
-			sourceTree = "<group>";
-		};
-		7C9EC3382BEB9CD7009C142C /* PlantTableView */ = {
-			isa = PBXGroup;
-			children = (
-				7C9EC3362BEB99D5009C142C /* FixedPlantTableViewCell.swift */,
-				7C3B94CC2BF378FC0017D620 /* PlantTVC.swift */,
-			);
-			path = PlantTableView;
 			sourceTree = "<group>";
 		};
 		7C9EC3612BEF54D0009C142C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				7C9EC3622BEF54F4009C142C /* NoteEntity.swift */,
+				7C18DAD52BFF63FC00BDC705 /* PlantEntity.swift */,
+				7C18DAD72C04984600BDC705 /* ReminderEntity.swift */,
+				7C82BDFE2C0A65900023F09E /* TagEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -337,6 +382,9 @@
 		7C9EC3662BEF5990009C142C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7C1C2FA72C0DC010009FAEED /* TagModule */,
+				7C82BDF12C0749A30023F09E /* CalendarView */,
+				7C18DAD12BF8BB3500BDC705 /* ReminderModule */,
 				7C535B612BE112A20072134D /* PlantModule */,
 				7C53B3032BC014D800BBFEA2 /* DayModule */,
 			);
@@ -356,7 +404,11 @@
 		7C9EC3682BEF5A90009C142C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				7C1C2FA02C0C96D9009FAEED /* Repository.swift */,
 				7C9EC36A2BEF5B06009C142C /* NoteRepository.swift */,
+				7C18DAD92C049AB600BDC705 /* ReminderRepository.swift */,
+				7C82BDF62C090D800023F09E /* PlantRepository.swift */,
+				7C2DD4FA2C0B2EFA00C2F37D /* TagRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -365,6 +417,9 @@
 			isa = PBXGroup;
 			children = (
 				7C3B94CE2BF3CF690017D620 /* NoteService.swift */,
+				7C18DADB2C05EE3F00BDC705 /* ReminderService.swift */,
+				7C82BDF82C09EC720023F09E /* PlantService.swift */,
+				7C1C2FAE2C0DC0F5009FAEED /* TagService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -517,39 +572,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C535B602BE0FE690072134D /* TitleTableViewCell.swift in Sources */,
+				7C1C2FA62C0CF949009FAEED /* TagCollectionViewModule.swift in Sources */,
+				7C82BDF92C09EC720023F09E /* PlantService.swift in Sources */,
+				7C18DADA2C049AB600BDC705 /* ReminderRepository.swift in Sources */,
 				7C3B94CF2BF3CF690017D620 /* NoteService.swift in Sources */,
+				7C82BDF72C090D800023F09E /* PlantRepository.swift in Sources */,
 				7C3B94C92BF34D390017D620 /* PlantAssembly.swift in Sources */,
 				7C53B2FE2BBED99500BBFEA2 /* CustomFonts.swift in Sources */,
-				7C7712642B91F100002AB97E /* MyGarden.xcdatamodeld in Sources */,
+				7C18DAD32BF8BB4F00BDC705 /* AddReminderViewController.swift in Sources */,
 				7C53B3072BC1F4B900BBFEA2 /* DayPresenter.swift in Sources */,
-				7C9EC32F2BE62E5E009C142C /* TagTableViewCell.swift in Sources */,
 				7C9EC32C2BE62DEE009C142C /* TagCollectionView.swift in Sources */,
 				7C3B94CB2BF36B580017D620 /* ListOfPlantTVC.swift in Sources */,
-				7C9725942BE2606D006AA86E /* NoteTableViewCell.swift in Sources */,
 				7C53B2F32BB6EFDB00BBFEA2 /* CustomColors.swift in Sources */,
+				7C82BDF32C0749D00023F09E /* CalendarViewController.swift in Sources */,
+				7C18DACA2BF4AA2400BDC705 /* MyGarden.xcdatamodeld in Sources */,
+				7C82BDFC2C0A15460023F09E /* ListOfPlantsPresenter.swift in Sources */,
+				7C1C2FAB2C0DC048009FAEED /* TagsPresenter.swift in Sources */,
+				7C18DACE2BF63B0000BDC705 /* PlantScrollViewController.swift in Sources */,
+				7C18DAD82C04984600BDC705 /* ReminderEntity.swift in Sources */,
 				7C9EC3352BEB689C009C142C /* PlantsModule.swift in Sources */,
-				7C9EC35E2BEE210F009C142C /* TableViewExtension.swift in Sources */,
+				7C1C2FAD2C0DC08C009FAEED /* TagsModule.swift in Sources */,
+				7C1C2FAF2C0DC0F5009FAEED /* TagService.swift in Sources */,
 				7C53B2F62BB6F01000BBFEA2 /* NoteView.swift in Sources */,
+				7C82BDF52C0767F00023F09E /* CalendarAssembly.swift in Sources */,
 				7C9EC36B2BEF5B06009C142C /* NoteRepository.swift in Sources */,
+				7C1C2FA92C0DC02F009FAEED /* TagViewController.swift in Sources */,
 				7C53B2F82BB8251900BBFEA2 /* ReminderView.swift in Sources */,
-				7C9725962BE38248006AA86E /* ButtonReminderTableViewCell.swift in Sources */,
 				7C77125E2B91F100002AB97E /* MainViewController.swift in Sources */,
-				7C9EC3372BEB99D5009C142C /* FixedPlantTableViewCell.swift in Sources */,
+				7C18DAD62BFF63FC00BDC705 /* PlantEntity.swift in Sources */,
 				7C53B30B2BDFA0B000BBFEA2 /* DayModule.swift in Sources */,
 				7C77125A2B91F100002AB97E /* AppDelegate.swift in Sources */,
-				7C535B632BE112C10072134D /* PlantTableViewController.swift in Sources */,
 				7C3B94CD2BF378FC0017D620 /* PlantTVC.swift in Sources */,
-				7C535B652BE2403E0072134D /* DayTableViewController.swift in Sources */,
+				7C2DD4FB2C0B2EFA00C2F37D /* TagRepository.swift in Sources */,
+				7C18DACC2BF4CFA700BDC705 /* DayScrollController.swift in Sources */,
 				7C53B3092BDBCBCF00BBFEA2 /* ReminderButton.swift in Sources */,
+				7C1C2FA12C0C96D9009FAEED /* Repository.swift in Sources */,
 				7C9EC3632BEF54F4009C142C /* NoteEntity.swift in Sources */,
-				7C9725922BE25337006AA86E /* ReminderStruct.swift in Sources */,
 				7C9EC3312BEA22B1009C142C /* DayAssembly.swift in Sources */,
 				7C77125C2B91F100002AB97E /* SceneDelegate.swift in Sources */,
+				7C7A90C32C066D4600A8786D /* ReminderModule.swift in Sources */,
 				7C9EC3332BEB6887009C142C /* PlantsPresenter.swift in Sources */,
+				7C18DADC2C05EE3F00BDC705 /* ReminderService.swift in Sources */,
 				7C53B3022BBEDFE100BBFEA2 /* TagView.swift in Sources */,
-				7C9BEADC2BE4DFD600CCDFD3 /* TagStruct.swift in Sources */,
-				7C9725982BE38BA9006AA86E /* ReminderTableViewCell.swift in Sources */,
+				7C18DAD02BF76F6F00BDC705 /* FixedDatesView.swift in Sources */,
+				7C82BDFF2C0A65900023F09E /* TagEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +625,6 @@
 			files = (
 				7C7712742B91F102002AB97E /* MyGardenTests.swift in Sources */,
 				7C9EC36C2BEF5B06009C142C /* NoteRepository.swift in Sources */,
-				7C9EC35F2BEE210F009C142C /* TableViewExtension.swift in Sources */,
 				7C9EC3642BEF54F4009C142C /* NoteEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,7 +635,6 @@
 			files = (
 				7C9EC36D2BEF5B06009C142C /* NoteRepository.swift in Sources */,
 				7C9EC3652BEF54F4009C142C /* NoteEntity.swift in Sources */,
-				7C9EC3602BEE210F009C142C /* TableViewExtension.swift in Sources */,
 				7C7712802B91F102002AB97E /* MyGardenUITestsLaunchTests.swift in Sources */,
 				7C77127E2B91F102002AB97E /* MyGardenUITests.swift in Sources */,
 			);
@@ -930,14 +994,14 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		7C7712622B91F100002AB97E /* MyGarden.xcdatamodeld */ = {
+		7C18DAC82BF4AA2400BDC705 /* MyGarden.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7C7712632B91F100002AB97E /* MyGarden.xcdatamodel */,
+				7C18DAC92BF4AA2400BDC705 /* MyGarden.xcdatamodel */,
 			);
-			currentVersion = 7C7712632B91F100002AB97E /* MyGarden.xcdatamodel */;
+			currentVersion = 7C18DAC92BF4AA2400BDC705 /* MyGarden.xcdatamodel */;
 			path = MyGarden.xcdatamodeld;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

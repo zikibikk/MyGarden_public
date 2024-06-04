@@ -68,21 +68,13 @@ class PlantScrollViewController: UIViewController {
 
 extension PlantScrollViewController: iPlantView {
     
-    func updateContent() {
-        
-    }
-    
     func getPlantName(_ plant: String) {
         self.title = plant
     }
     
     func getFixedDates(fixedReminders: [ReminderStruct]) {
         for fixedReminder in fixedReminders {
-            let reminderView = FixedDatesView()
-            reminderView.date = fixedReminder.reminderDate
-            reminderView.descriptionText = fixedReminder.reminderText
-            fixedDatesViews.append(reminderView)
-            verticalFixedDatesStackView.addArrangedSubview(reminderView)
+            addFixedDates(fixedReminder: fixedReminder)
         }
     }
     
@@ -94,18 +86,25 @@ extension PlantScrollViewController: iPlantView {
         verticalFixedDatesStackView.addArrangedSubview(reminderView)
     }
     
-    func getReminders(remindersStruct: [ReminderStruct]) {
-        for reminderStruct in remindersStruct {
-            let reminderView = RemindView()
-            reminderView.time = reminderStruct.reminderTime
-            reminderView.descriptionText = reminderStruct.reminderText
-            remindersViews.append(reminderView)
-            verticalReminderStackView.addArrangedSubview(reminderView)
-        }
-    }
-    
     func getTags(tagsStructs: [TagStruct]) {
         tagCollectionView.tagsStruct = tagsStructs
+    }
+}
+
+extension PlantScrollViewController: remindableView {
+    
+    func addReminderView(reminderStruct: ReminderStruct) {
+        let reminderView = RemindView()
+        reminderView.time = reminderStruct.reminderTime
+        reminderView.descriptionText = reminderStruct.reminderText
+        remindersViews.append(reminderView)
+        verticalReminderStackView.addArrangedSubview(reminderView)
+    }
+    
+    func getReminders(remindersStruct: [ReminderStruct]) {
+        for reminderStruct in remindersStruct {
+            addReminderView(reminderStruct: reminderStruct)
+        }
     }
 }
 

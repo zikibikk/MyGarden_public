@@ -6,48 +6,72 @@
 //
 
 import Foundation
-
-class MockDayPresenter: iDayPresenter {
+//TODO: решить, удалять растения и теги вместе с заметкой или нет
+class MockDayPresenterWithNoteService: iDayPresenter {
+    
     weak var viewInput: iNoteView?
+    private var date: Date
+    private var noteService = NoteService.shared
+    private var reminderService = ReminderService.shared
+    
+    init(date: Date) {
+        self.date = date
+    }
     
     func viewDidLoad() {
-        viewInput?.getDate(dateText: "Сегодня, 29 апреля")
-        viewInput?.getNoteText(noteText: "Высадила семена томата в стаканчики. Очень долго шли из Самары, и теперь надо успеть до конца следующей недели вырастить крепкие саженцы: погоду обещают хорошую, снег быстрее растает. Обрезала сухие ветки ежевики, вечером сожгла.")
-        viewInput?.getReminders(remindersStruct: [
-            .init(reminderText: "Высадить ежевику", reminderDate: "17:30"),
-            .init(reminderText: "Удобрить розы", reminderDate: "20:45")])
-        viewInput?.getTags(tagsStruct: [.init(name: "косточковые", color: .lightGreen),
-                                        .init(name: "неприхотлива", color: .lightGreen),
-                                        .init(name: "ягода", color: .lightGreen),
-                                        .init(name: "все виды удобрений", color: .lightGreen),
-                                        .init(name: "дневной полив", color: .lightGreen),
-                                        .init(name: "сладкая", color: .lightGreen)])
-        viewInput?.updateContent()
+        
+        viewInput?.getDate(dateText: date.getDayWithWeekString())
+        viewInput?.getNoteText(noteText: noteService.getNote(with: date))
+        viewInput?.getReminders(remindersStruct: reminderService.getRemindersForDate(date: date))
+        if let note = noteService.getNoteS(with: date) {
+            viewInput?.getTags(tagsStruct: noteService.getNoteTags(note: note))
+        }
+    }
+    
+    func viewEndedEditing() {
+        guard let text = viewInput?.returnCurrentNoteText() else { return }
+        
+        if (text != "") {
+            noteService.saveOrUpdate(note: .init(text: text, date: date))
+        } else {
+            noteService.deleteNote(with: date)
+        }
     }
     
     func viewWillDisapear() {
-        print(viewInput?.returnCurrentNoteText() ?? "no value")
+        
+    }
+    
+}
+
+extension MockDayPresenterWithNoteService: addReminderDelegate {
+    func addNewReminderToView(newStruct: ReminderStruct) {
+        viewInput?.addReminderView(reminderStruct: newStruct)
+    }
+    
+    func pressedAddReminderButton() {
+        let addReminderController = AddReminderController(addReminderDelegate: self)
+        if let sheet = addReminderController.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        viewInput?.present(addReminderController, animated: true)
     }
 }
 
-
-class DayPresenter: iDayPresenter {
-    
-    
-    private var noteDate: Date
-    var viewInput: iNoteView?
-    private var noteService: iNoteService
-    
-    init(noteDate: Date, noteService: iNoteService) {
-        self.noteDate = noteDate
-        self.noteService = noteService
+extension MockDayPresenterWithNoteService: TagCollectionViewDelegate {
+    func pressedTag(id: UUID) {
+        
     }
     
-    func viewDidLoad() {
-        viewInput?.getNoteText(noteText: noteService.returnNoteByDate(date: noteDate))
-    }
-    
-    func viewWillDisapear() {
-        noteService.saveNote(noteText: viewInput?.returnCurrentNoteText())
+    func addTagButtonPressed() {
+        let tagPresenter = TagsPresenter()
+        let tagViewController = TagViewController(presenter: tagPresenter)
+        tagPresenter.inputView = tagViewController
+        
+        if let sheet = tagViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        viewInput?.present(tagViewController, animated: true)
+//        viewInput?.addTag(tagsStruct: .init(name: "m", color: .lightGreen))
     }
 }

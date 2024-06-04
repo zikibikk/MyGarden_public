@@ -57,10 +57,10 @@ extension RemindView {
         self.addSubview(timeLabel)
         self.addSubview(rhombusImageView)
         self.addSubview(descriptionLabel)
+        
         timeLabel.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview()
+            make.leading.centerY.equalToSuperview()
         }
-        //левый отступ приввязан к супервью, а не ко времени, чтобы не зависело от ширины времени
         
         rhombusImageView.snp.makeConstraints { make in
             make.leading.equalTo(timeLabel.snp.trailing).offset(10)
@@ -71,11 +71,11 @@ extension RemindView {
         descriptionLabel.snp.makeConstraints { make in
             make.leading.equalTo(rhombusImageView.snp.trailing).offset(16)
             make.trailing.equalToSuperview()
-            make.top.equalTo(timeLabel)
+            make.top.equalTo(timeLabel.snp.top)
         }
         
         self.snp.makeConstraints { make in
-            make.bottom.equalTo(descriptionLabel)
+            make.height.equalTo(40)
         }
     }
 }

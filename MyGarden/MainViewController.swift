@@ -9,6 +9,17 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
+    
+    private lazy var calendarView: UICalendarView = {
+        let calendarView = UICalendarView()
+        
+        calendarView.calendar = .current
+        calendarView.locale = Locale(identifier: "ru_RU")
+        calendarView.tintColor = .myGreen
+        calendarView.fontDesign = .rounded
+        
+        return calendarView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,36 +30,24 @@ class MainViewController: UIViewController {
 extension MainViewController {
     func setUp() {
         view.backgroundColor = .white
+        view.addSubview(calendarView)
         
-        let tv = TagCollectionView()
+        let dateSelection = UICalendarSelectionMultiDate(delegate: self)
+        calendarView.selectionBehavior = dateSelection
         
-        tv.tagsStruct = [.init(name: "косточковые", color: .lightGreen),
-                   .init(name: "неприхотлива", color: .lightGreen),
-                   .init(name: "ягода", color: .lightGreen),
-                   .init(name: "все виды удобрений", color: .lightGreen),
-                   .init(name: "дневной полив", color: .lightGreen),
-                   .init(name: "сладкая", color: .lightGreen)
-        ]
-        
-        
-        
-        let tag = ReminderButton()
-        
-        
-        view.addSubview(tag)
-        view.addSubview(tv)
-        
-        tv.snp.makeConstraints{ make in
-            make.top.equalToSuperview().inset(100)
-//            make.bottom.equalToSuperview().inset(300)
-            make.leading.trailing.equalToSuperview().inset(30)
-//            make.width.equalToSuperview().inset(40)
-        }
-        
-        
-        tag.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(50)
+        calendarView.snp.makeConstraints { make in
+            make.left.right.top.equalToSuperview().inset(20)
         }
     }
 }
 
+
+extension MainViewController: UICalendarSelectionMultiDateDelegate {
+    func multiDateSelection(_ selection: UICalendarSelectionMultiDate, didSelectDate dateComponents: DateComponents) {
+        print(dateComponents)
+    }
+    
+    func multiDateSelection(_ selection: UICalendarSelectionMultiDate, didDeselectDate dateComponents: DateComponents) {
+        print(dateComponents)
+    }
+}

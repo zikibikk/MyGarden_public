@@ -5,33 +5,33 @@
 //  Created by Alina Bikkinina on 29.04.2024.
 //
 
-import Foundation
+import UIKit
 
-protocol iNoteView: AnyObject {
+protocol iNoteView: UIViewController, remindableView, TagableView {
     func getDate(dateText: String)
     func getNoteText(noteText: String)
-    func getReminders(remindersStruct: [ReminderStruct])
-    func getTags(tagsStruct: [TagStruct])
-    func updateContent()
     func returnCurrentNoteText() -> String?
 }
 
-protocol iDayPresenter {
+protocol iDayPresenter: addReminderDelegate, TagCollectionViewDelegate {
     var viewInput: iNoteView? { get set }
+    func viewEndedEditing()
     func viewDidLoad()
     func viewWillDisapear()
 }
 
 protocol iNoteService {
-    func saveNote(noteText: String?)
-    func returnNoteByDate(date: Date) -> String
+    func getNote(with date: Date) -> String
+    func saveOrUpdate(note: NoteStruct)
+    func deleteNote(note: NoteStruct)
+    func deleteNote(with date: Date)
 }
 
 protocol iNoteRepository {
-    func createNote(id: Int16, note: NoteStruct)
+    func createNote(note: NoteStruct)
     func fetchNotes() -> [NoteEntity]
     func fetchNote(with date: Date) -> NoteEntity?
-    func updateNote(with date: Date, newText: String)
+    func updateNote(with date: Date, newText: String) -> Bool
     func deleteAllNotes()
-    func deleteNote(with date: Date)
+    func deleteNote(with date: Date) -> Bool
 }

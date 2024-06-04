@@ -15,11 +15,7 @@ enum ListOfPlantAssembly {
         
         let navigationController = UINavigationController()
         navigationController.navigationBar.tintColor = .black
-        
         navigationController.navigationBar.barTintColor = .white
-        
-        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.plantTitle]
-        navigationController.navigationBar.titleTextAttributes = attributes
         
         navigationController.viewControllers = [listController]
         return navigationController

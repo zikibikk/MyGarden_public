@@ -10,7 +10,6 @@ import Foundation
 class MockPlantPresenter: iPlantPresenter {
     var plant: PlantStruct
     weak var viewInput: iPlantView?
-    
     private let plantService = PlantService.shared
     
     required init(plant: PlantStruct) {
@@ -19,6 +18,8 @@ class MockPlantPresenter: iPlantPresenter {
     
     func viewDidLoad() {
         viewInput?.getPlantName(plant.name)
+        //TODO: напоминания на сегодня фильтровать из напоминаний, которые уже хранятся в растении
+        viewInput?.getReminders(remindersStruct: plant.reminders)
         
         viewInput?.getTags(tagsStructs: [.init(name: "косточковые", color: .lightGreen),
                                         .init(name: "неприхотлива", color: .lightGreen),
@@ -27,14 +28,13 @@ class MockPlantPresenter: iPlantPresenter {
                                         .init(name: "дневной полив", color: .lightGreen),
                                         .init(name: "сладкая", color: .lightGreen)])
         
-        viewInput?.updateContent()
     }
 }
 
 extension MockPlantPresenter: addReminderDelegate {
     func addNewReminderToView(newStruct: ReminderStruct) {
-        plantService.addReminderToPlant(newStruct, toPlant: plant)
-//        viewInput?.addReminderView(reminderStruct: newStruct)
+        plantService.add(reminder: newStruct, toPlant: plant)
+        viewInput?.addReminderView(reminderStruct: newStruct)
     }
     
     func pressedAddReminderButton() {

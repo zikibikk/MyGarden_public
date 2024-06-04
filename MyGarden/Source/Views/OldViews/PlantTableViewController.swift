@@ -109,6 +109,18 @@ extension PlantTableViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension PlantTableViewController: iPlantView {
+    func addReminderView(reminderStruct: ReminderStruct) {
+        
+    }
+    
+    func getPlantName(_ plant: String) {
+        
+    }
+    
+    func addFixedDates(fixedReminder: ReminderStruct) {
+        
+    }
+    
     func getTags(tagsStructs: [TagStruct]) {
         models.append((PlantModels.subtitle, ["Теги"]))
         models.append((PlantModels.tags, []))
@@ -118,7 +130,7 @@ extension PlantTableViewController: iPlantView {
     func getReminders(remindersStruct: [ReminderStruct]) {
         models.append((PlantModels.reminderButton, []))
         for reminder in remindersStruct {
-            models.append((PlantModels.reminder, [reminder.reminderDate, reminder.reminderText]))
+            models.append((PlantModels.reminder, [reminder.reminderTime, reminder.reminderText]))
         }
     }
     

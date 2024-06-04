@@ -9,7 +9,7 @@ import SnapKit
 
 class NoteView: UIView {
     
-    private lazy var textView: UITextView = {
+    lazy var textView: UITextView = {
         let tv = UITextView()
         tv.textContainerInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         tv.font = .noteFont

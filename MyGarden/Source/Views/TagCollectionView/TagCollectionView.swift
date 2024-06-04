@@ -8,14 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol TagViewDelegate {
-    func pressedTag(id: UUID, title: String)
-}
-
-protocol TagCollectionViewDelegate {
-    func pressedTag(id: UUID)
-    func addTag()
-}
 
 class TagCollectionView: UIView {
     private let rowSpacing = 7
@@ -25,11 +17,7 @@ class TagCollectionView: UIView {
     var tagsStruct: [TagStruct] = []
     var tagCollectionDelegate: TagCollectionViewDelegate?
     var hasLayoutedSubviews = false
-//    private var finalTag: TagView = {
-//        let tag = TagView()
-//        tag.tagStruct = .init(name: "  +  ", color: .lightGreen)
-//        return tag
-//    }()
+    var hasAddButton = true
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -48,7 +36,7 @@ class TagCollectionView: UIView {
 extension TagCollectionView: TagViewDelegate {
     func pressedTag(id: UUID, title: String) {
         if(title == "+") {
-            tagCollectionDelegate?.addTag()
+            tagCollectionDelegate?.addTagButtonPressed()
         } else {
             tagCollectionDelegate?.pressedTag(id: id)
         }
@@ -56,6 +44,15 @@ extension TagCollectionView: TagViewDelegate {
 }
 
 extension TagCollectionView {
+    
+    func insert(newTag tag: TagStruct) {
+        if (hasAddButton) {tagsStruct.removeLast()}
+        tagViews.forEach({$0.forEach { tagView in
+            tagView.removeFromSuperview()
+        }})
+        tagsStruct.append(tag)
+        self.calculateViews()
+    }
     
     private func calculateViews() {
         
@@ -67,12 +64,13 @@ extension TagCollectionView {
             s1.name.count > s2.name.count
         }
         
-        tagsStruct.append(.init(name: "+", color: .lightGreen))
+        if (hasAddButton) {tagsStruct.append(.init(name: "+", color: .lightGreen))}
         
         for tagStruct in self.tagsStruct {
             let tagViewToInsert = TagView()
             tagViewToInsert.tagStruct = tagStruct
             tagViewToInsert.layoutIfNeeded()
+            tagViewToInsert.tagViewDelegate = self
             let needWidth = Int(tagViewToInsert.bounds.width)
             var isInserted = false
             
@@ -99,7 +97,6 @@ extension TagCollectionView {
         for i in 0..<tagViews.count {
             for j in 1..<tagViews[i].count {
                 self.addSubview(tagViews[i][j])
-                tagViews[i][j].tagViewDelegate = self
                 tagViews[i][j].snp.makeConstraints { make in
                     make.top.equalTo(tagViews[i][j-1])
                     make.left.equalTo(tagViews[i][j-1].snp.right).offset(rowSpacing)
@@ -119,8 +116,10 @@ extension TagCollectionView {
     }
     
     func addBottomConstraints() {
-        self.snp.makeConstraints { make in
-            make.bottom.equalTo(tagViews[tagViews.count-1][0])
+        if (!tagViews.isEmpty) {
+            self.snp.makeConstraints { make in
+                make.bottom.equalTo(tagViews[tagViews.count-1][0])
+            }
         }
     }
 }

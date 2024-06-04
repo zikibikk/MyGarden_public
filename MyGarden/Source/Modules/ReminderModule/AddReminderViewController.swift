@@ -10,6 +10,10 @@ import SnapKit
 
 class AddReminderController: UIViewController {
     
+    private var service: iReminderService
+    private var presenter: iReminderPresenter?
+    private var delegate: addReminderDelegate
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -21,7 +25,9 @@ class AddReminderController: UIViewController {
     
     private lazy var textField: UITextField = {
        let tf = UITextField()
+        tf.placeholder = "Введите текст напоминания"
         tf.borderStyle = .roundedRect
+        tf.tintColor = .myGreen
         tf.keyboardType = .default
         tf.enablesReturnKeyAutomatically = true
         return tf
@@ -29,9 +35,7 @@ class AddReminderController: UIViewController {
     
     private lazy var datePicker: UIDatePicker = {
         let dp = UIDatePicker()
-        if #available(iOS 13.4, *) {
-            dp.preferredDatePickerStyle = .wheels
-        }
+        dp.preferredDatePickerStyle = .wheels
         dp.locale = .init(identifier: Locale.preferredLanguages.first!)
         return dp
     }()
@@ -50,7 +54,7 @@ class AddReminderController: UIViewController {
     private lazy var verticalView: UIStackView = {
         let hv = UIStackView()
         hv.axis = .vertical
-        hv.spacing = 12
+        hv.spacing = 8
         return hv
     }()
     
@@ -61,9 +65,11 @@ class AddReminderController: UIViewController {
         super.viewDidLoad()
     }
     
-    init() {
-        
+    init(addReminderDelegate: addReminderDelegate) {
+        self.delegate = addReminderDelegate
+        self.service = ReminderService.shared
         super.init(nibName: nil, bundle: nil)
+        presenter = self
     }
     
     required init?(coder: NSCoder) {
@@ -92,16 +98,25 @@ extension AddReminderController {
         verticalView.addArrangedSubview(datePicker)
         verticalView.addArrangedSubview(addButton)
         addButton.addGestureRecognizer(reminderGestureRecognizer)
-        self.view.snp.makeConstraints({$0.bottom.equalTo(verticalView).offset(25)})
     }
 }
 
 extension AddReminderController {
+    
     @objc func addReminder(_ sender:UITapGestureRecognizer) {
-//        textField.endEditing(true)
-//        let reminder = ReminderStruct(reminderText: textField.text ?? "", reminderDate: datePicker.date, remindersPlants: nil)
-//        reminderService.addReminder(reminder: reminder)
-//        print(reminder.reminderText, " ", reminder.reminderDate)
-//        router?.closeReminderVC()
+        guard let text = textField.text else { return }
+        presenter?.pressedAddReminderButton(date: datePicker.date, text: text)
+    }
+}
+
+extension AddReminderController: iReminderPresenter {
+    func pressedAddReminderButton(date: Date, text: String) {
+        if (!text.isEmpty) {
+            guard let newReminder = service.saveReminder(date: date, text: text) else { return }
+            delegate.addNewReminderToView(newStruct: newReminder)
+            dismiss(animated: true)
+        } else {
+            textField.backgroundColor = .red
+        }
     }
 }

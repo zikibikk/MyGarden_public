@@ -15,21 +15,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-//        let serv = NoteService.shared
-//        serv.testWork()
-//        
+        let serv = NoteService.shared
+        serv.testWork()
+        
+        let reminderServ = ReminderService.shared
+        reminderServ.test()
+        
+        let plantService = PlantService.shared
+        plantService.test()
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let tabBarController = UITabBarController()
         
-        tabBarController.viewControllers = [DayAssembly.assemble(), ListOfPlantAssembly.assemble()]
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [DayAssembly.assemble(forDate: Date()),
+                                            CalendarAssembly.assemble(),
+                                            ListOfPlantAssembly.assemble()]
         tabBarController.tabBar.tintColor = .black
         tabBarController.tabBar.barTintColor = .white
         
         guard let items = tabBarController.tabBar.items else { return }
         items[0].image = UIImage(systemName: "scribble.variable")
         items[1].image = UIImage(systemName: "calendar")
-        
+        items[2].image = UIImage(systemName: "scribble.variable")
+//        
         window.rootViewController = tabBarController
         self.window = window
         window.makeKeyAndVisible()

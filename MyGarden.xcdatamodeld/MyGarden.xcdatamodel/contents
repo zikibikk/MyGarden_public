@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier=""/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="plants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="notes" inverseEntity="PlantEntity"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TagEntity" inverseName="notes" inverseEntity="TagEntity"/>
+    </entity>
+    <entity name="PlantEntity" representedClassName="PlantEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteEntity" inverseName="plants" inverseEntity="NoteEntity"/>
+        <relationship name="reminders" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ReminderEntity" inverseName="plant" inverseEntity="ReminderEntity"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TagEntity" inverseName="plants" inverseEntity="TagEntity"/>
+    </entity>
+    <entity name="ReminderEntity" representedClassName="ReminderEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateWithTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="plant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="reminders" inverseEntity="PlantEntity"/>
+    </entity>
+    <entity name="TagEntity" representedClassName="TagEntity" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteEntity" inverseName="tags" inverseEntity="NoteEntity"/>
+        <relationship name="plants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="tags" inverseEntity="PlantEntity"/>
+    </entity>
+</model>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension UIColor {
     
@@ -31,5 +32,15 @@ extension UIColor {
     
     static var reminderGray: UIColor {
         return UIColor(red: 114/255, green: 114/255, blue: 114/255, alpha: 100)
+    }
+    
+    func encode() -> Data? {
+        return try? NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: false)
+    }
+    
+    static func decode(data: Data) -> UIColor? {
+        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
+        
+        NSSecureUnarchiveFromDataTransformer.classForKeyedUnarchiver()
     }
 }
