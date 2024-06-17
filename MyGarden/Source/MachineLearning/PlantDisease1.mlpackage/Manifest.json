@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "0698B221-0652-4680-8A71-D495C28CDD1A": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "PlantDisease 1.mlmodel",
+            "path": "com.apple.CoreML/PlantDisease 1.mlmodel"
+        },
+        "1822C16D-03BC-4DF5-8EF6-30B5D58C72BB": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "1B27A70E-7937-4BE3-87FC-5D3B42A8671C": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        }
+    },
+    "rootModelIdentifier": "0698B221-0652-4680-8A71-D495C28CDD1A"
+}
