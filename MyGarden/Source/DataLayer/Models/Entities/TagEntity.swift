@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 @objc(TagEntity)
-public class TagEntity: NSManagedObject, EntityWithManagedSet {
+public class TagEntity: NSManagedObject, EntityWithID {
     @NSManaged public var id: UUID
     @NSManaged public var title: String
     @NSManaged public var color: Data

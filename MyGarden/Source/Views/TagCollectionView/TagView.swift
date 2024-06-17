@@ -26,9 +26,12 @@ class TagView: UIView {
             tagLabel.text = newValue.name.lowercased()
             self.backgroundColor = newValue.color
             if (newValue.name == "+") {makeAddButton()}
+            tagID = newValue.id
         }
         get { return .init(name: tagLabel.text ?? "", color: self.backgroundColor ?? UIColor())}
     }
+    
+    var tagID: UUID = UUID()
     
     private var tagName: String? {
         set { tagLabel.text = newValue?.lowercased() }
@@ -54,7 +57,7 @@ extension TagView {
     
     @objc func handleTap() {
         guard let title = tagName else { return }
-        tagViewDelegate?.pressedTag(id: tagStruct.id, title: title)
+        tagViewDelegate?.pressedTag(id: tagID, title: title)
     }
     
     private func makeAddButton() {

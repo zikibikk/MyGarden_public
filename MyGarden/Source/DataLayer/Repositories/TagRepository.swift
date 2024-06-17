@@ -65,9 +65,11 @@ class TagRepository {
         guard let backgroundContext = self.backgroundContext else { return nil }
         
         return backgroundContext.performAndWait {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(TagEntity.self)")
-            let predicate = NSPredicate(format: "id == %@", id as CVarArg)
-            fetchRequest.predicate = predicate
+//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(TagEntity.self)")
+//            let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+//            fetchRequest.predicate = predicate
+            
+            let fetchRequest = self.fetchRequestWithIdPredicate(entityName: "\(TagEntity.self)", id: id)
             
             do {
                 let tags = try? backgroundContext.fetch(fetchRequest) as? [TagEntity]
@@ -142,7 +144,7 @@ extension TagRepository {
         return backgroundContext.performAndWait {
             
             let tagFetchRequest = self.fetchRequestWithIdPredicate(entityName: "\(TagEntity.self)", id: tag.id)
-            let plantFetchRequest = self.fetchRequestWithIdPredicate(entityName: "\(NoteEntity.self)", id: plantID)
+            let plantFetchRequest = self.fetchRequestWithIdPredicate(entityName: "\(PlantEntity.self)", id: plantID)
             
             
             do {

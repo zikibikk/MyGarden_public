@@ -8,20 +8,51 @@
 import UIKit
 import CoreData
 
-public protocol EntityWithManagedSet: NSManagedObject {
+public protocol EntityWithID: NSManagedObject {
     var id: UUID { get  }
 }
 
-protocol iStr {
+public protocol DataTransferModel {
     var id: UUID { get set }
 }
 
 
-class Repository<MainEntity: EntityWithManagedSet> {
+class Repository<MainEntity: EntityWithID> {
+    
+    func create( entitySetUp closure: @escaping(_ entity: MainEntity) -> (), backgroundContext: NSManagedObjectContext) -> MainEntity? {
+        return backgroundContext.performAndWait {
+            guard let mainEntityDescription = NSEntityDescription.entity(forEntityName: "\(MainEntity.self)", in: backgroundContext) else {
+                print("Failed to create noteEntityDescription for \(NoteEntity.self)")
+                return nil
+            }
+            
+            let entityToSave = MainEntity(entity: mainEntityDescription, insertInto: backgroundContext) as! MainEntity
+            closure(entityToSave)
+            
+            do {
+                try backgroundContext.save()
+                print("Saved!")
+            } catch {
+                print("Failed to save background context: \(error)")
+                return nil
+            }
+            
+            return entityToSave
+        }
+    }
+    
     
     func fetchRequestWithIdPredicate<Entity: NSManagedObject>(entity: Entity.Type, id: UUID) -> NSFetchRequest<Entity> {
         let addingFetchRequest = NSFetchRequest<Entity>(entityName: String(describing: Entity.self))
         let addingPredicate = NSPredicate(format: "id == %@", id as CVarArg)
+        addingFetchRequest.predicate = addingPredicate
+        
+        return addingFetchRequest
+    }
+    
+    func fetchRequestWithPredicate(predicate: String, argument: CVarArg) -> NSFetchRequest<MainEntity> {
+        let addingFetchRequest = NSFetchRequest<MainEntity>(entityName: String(describing: MainEntity.self))
+        let addingPredicate = NSPredicate(format: "\(predicate) == %@", argument)
         addingFetchRequest.predicate = addingPredicate
         
         return addingFetchRequest
@@ -39,7 +70,7 @@ class Repository<MainEntity: EntityWithManagedSet> {
         }
     }
     
-    func fetchWithID<Entity: NSManagedObject>(entity: Entity.Type, id: UUID, backgroundContext: NSManagedObjectContext) -> Entity? {
+    func fetch<Entity: NSManagedObject>(withID id: UUID, EntityOfType: Entity.Type, backgroundContext: NSManagedObjectContext) -> Entity? {
         
         return backgroundContext.performAndWait {
             
@@ -48,6 +79,17 @@ class Repository<MainEntity: EntityWithManagedSet> {
             do {
                 let entities = try? backgroundContext.fetch(fetchRequest)
                 return entities?.first
+            }
+        }
+    }
+    
+    func fetchWith(predicate: String, value: CVarArg, backgroundContext: NSManagedObjectContext) -> MainEntity? {
+        return backgroundContext.performAndWait {
+            let fetchRequest = self.fetchRequestWithPredicate(predicate: predicate, argument: value)
+            
+            do {
+                let entities = try? backgroundContext.fetch(fetchRequest)
+                return entities?.first as? MainEntity
             }
         }
     }
@@ -64,9 +106,9 @@ class Repository<MainEntity: EntityWithManagedSet> {
         }
     }
     
-    func deleteWithID<Entity: NSManagedObject>(entity: Entity.Type, id: UUID, backgroundContext: NSManagedObjectContext) -> Bool {
+    func delete<Entity: NSManagedObject>(withID id: UUID, EntityOfType : Entity.Type,backgroundContext: NSManagedObjectContext) -> Bool {
         
-        guard let entityToDelete = fetchWithID(entity: entity, id: id, backgroundContext: backgroundContext) else { return false }
+        guard let entityToDelete = fetch(withID: id, EntityOfType: Entity.self, backgroundContext: backgroundContext) else { return false }
         
         do {
             backgroundContext.delete(entityToDelete)
@@ -99,6 +141,21 @@ class Repository<MainEntity: EntityWithManagedSet> {
                 guard let targetEntity = targets?.first else { return }
                 manipulation(addingEntity, targetEntity)
                 try? backContext.save()
+            }
+        }
+    }
+    
+    func fetch<FetchingEntity>(fromEntityWithID id: UUID, arrayOfType: FetchingEntity.Type, fromSet closure: @escaping(_ fromEntity: MainEntity?) -> NSSet?, backgroundContext: NSManagedObjectContext) -> [FetchingEntity] {
+        return backgroundContext.performAndWait {
+            let mainEntityRequest = self.fetchRequestWithIdPredicate(entity: MainEntity.self, id: id)
+            
+            do {
+                let mains = try? backgroundContext.fetch(mainEntityRequest)
+                let set = closure(mains?.first)
+                
+                if let fetchingEntityArray = set?.allObjects as? [FetchingEntity] {
+                    return fetchingEntityArray
+                } else { return [] }
             }
         }
     }

@@ -17,6 +17,11 @@ class PlantService {
         self.repository = repository
     }
     
+    func savePlant(withName plant: String) -> PlantStruct? {
+        guard let plant = repository.createPlant(withName: plant) else {return nil}
+        return .init(entity: plant)
+    }
+    
     func savePlant(plant: PlantStruct) {
         repository.createPlant(plant: plant)
     }
@@ -25,6 +30,11 @@ class PlantService {
         return repository.fetchPlants().map { plantEntity in
                 return PlantStruct(entity: plantEntity)
         }
+    }
+    
+    func get(plantWithID id: UUID) -> PlantStruct? {
+        guard let plant = repository.fetchPlantWith(id: id) else { return nil }
+        return .init(entity: plant)
     }
     
     func add(reminder: ReminderStruct, toPlant plant: PlantStruct) {
@@ -36,11 +46,11 @@ class PlantService {
     }
     
     func add(tag: TagStruct, toPlant plant: PlantStruct) {
-        TagRepository.shared.add(plantWithID: plant.id, toTag: tag)
+        repository.add(tag: tag, toPlant: plant)
     }
     
     func remove(tag: TagStruct, fromPlant plant: PlantStruct) {
-        TagRepository.shared.remove(fromPlant: plant, tag: tag)
+        repository.remove(fromPlant: plant, tag: tag)
     }
     
     func deleteAllPlants() {
@@ -54,6 +64,10 @@ class PlantService {
     
     func getPlantRemindersForToday(plant: PlantStruct) -> [ReminderStruct] {
         return ReminderService.shared.getRemindersForDate(date: Date()).filter({$0.reminderPlant == plant.id})
+    }
+    
+    func getTags(forPlant plant: PlantStruct) -> [TagStruct] {
+        return repository.fetchTags(forPlant: plant).map({.init(entity: $0)})
     }
     
     

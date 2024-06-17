@@ -16,3 +16,7 @@ protocol iTagPresenter: TagCollectionViewDelegate {
     func viewDidLoad()
     func addTagButtonPressed(newTag: String)
 }
+
+protocol tagSelectionDelegate {
+    func selectedTag(_ tag: TagStruct)
+}

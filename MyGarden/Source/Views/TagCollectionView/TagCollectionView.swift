@@ -36,9 +36,9 @@ class TagCollectionView: UIView {
 extension TagCollectionView: TagViewDelegate {
     func pressedTag(id: UUID, title: String) {
         if(title == "+") {
-            tagCollectionDelegate?.addTagButtonPressed()
+            tagCollectionDelegate?.addTagButtonPressedOnCollectionView()
         } else {
-            tagCollectionDelegate?.pressedTag(id: id)
+            tagCollectionDelegate?.pressedTag(withID: id)
         }
     }
 }
@@ -46,6 +46,7 @@ extension TagCollectionView: TagViewDelegate {
 extension TagCollectionView {
     
     func insert(newTag tag: TagStruct) {
+        if tagsStruct.contains(where: {$0.id == tag.id}) { return }
         if (hasAddButton) {tagsStruct.removeLast()}
         tagViews.forEach({$0.forEach { tagView in
             tagView.removeFromSuperview()

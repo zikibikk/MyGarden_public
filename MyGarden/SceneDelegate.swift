@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -27,19 +28,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
+//        let viewController
+        
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [DayAssembly.assemble(forDate: Date()),
                                             CalendarAssembly.assemble(),
-                                            ListOfPlantAssembly.assemble()]
+                                            ListOfPlantAssembly.assemble(),
+                                            FertilizerAssembly.assemble()]
         tabBarController.tabBar.tintColor = .black
         tabBarController.tabBar.barTintColor = .white
         
         guard let items = tabBarController.tabBar.items else { return }
-        items[0].image = UIImage(systemName: "scribble.variable")
+        items[0].image = UIImage(systemName: "pencil.and.list.clipboard")
         items[1].image = UIImage(systemName: "calendar")
-        items[2].image = UIImage(systemName: "scribble.variable")
-//        
+        items[2].image = .flowerIcon.resized(to: .init(width: 28, height: 28))
+        items[3].image = .sprayer.resized(to: .init(width: 28, height: 28))
+
+//
         window.rootViewController = tabBarController
+        
+        
         self.window = window
         window.makeKeyAndVisible()
     }

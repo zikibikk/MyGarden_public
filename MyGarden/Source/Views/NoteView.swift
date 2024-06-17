@@ -12,7 +12,6 @@ class NoteView: UIView {
     lazy var textView: UITextView = {
         let tv = UITextView()
         tv.textContainerInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-        tv.font = .noteFont
         tv.textColor = .black
         tv.textAlignment = .left
         tv.keyboardType = .default
@@ -34,6 +33,13 @@ class NoteView: UIView {
             textView.attributedText = attributedString
         }
         get { return textView.text }
+    }
+    
+    var textViewDelegate: UITextViewDelegate? {
+        set {
+            textView.delegate = newValue
+        }
+        get { return textView.delegate }
     }
     
     override init(frame: CGRect) {

@@ -42,6 +42,15 @@ class NoteService: iNoteService {
         repository.addTagToNote(tag, toNote: note)
     }
     
+    func add(plantWithId id: UUID, toNote note: NoteStruct) -> PlantStruct? {
+        guard let plant = repository.add(plantWithId: id, toNote: note) else { return nil }
+        return .init(entity: plant)
+    }
+    
+    func getAllPlants(fromNote note: NoteStruct) -> [PlantStruct] {
+        return repository.fetchAllPlants(fromNote: note).map({.init(entity: $0)})
+    }
+    
     func getNoteTags(note: NoteStruct) -> [TagStruct] {
         repository.fethNoteTags(note: note).map({.init(entity: $0)})
     }

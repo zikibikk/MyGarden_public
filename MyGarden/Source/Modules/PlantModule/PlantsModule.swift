@@ -14,7 +14,9 @@ protocol iListOfPlantsView: UIViewController {
 protocol iListOfPlantsPresenter {
     var listViewInput: iListOfPlantsView? { get set }
     func viewDidLoad()
+    func viewWillAppear()
     func selectedPlant(plant: PlantStruct)
+    func createPlant()
 }
 
 protocol iPlantRepository {
@@ -26,15 +28,14 @@ protocol iPlantRepository {
     func deletePlantWith(id: UUID)
 }
 
-protocol iPlantView: UIViewController, remindableView {
+protocol iPlantView: UIViewController, remindableView, TagableView {
     func getPlantName(_ plant: String)
     func getFixedDates(fixedReminders: [ReminderStruct])
     func addFixedDates(fixedReminder: ReminderStruct)
     func getReminders(remindersStruct: [ReminderStruct])
-    func getTags(tagsStructs: [TagStruct])
 }
 
-protocol iPlantPresenter: addReminderDelegate {
+protocol iPlantPresenter: addReminderDelegate, TagCollectionViewDelegate, tagSelectionDelegate, iPhotablePresenter {
     var viewInput: iPlantView? { get set }
     var plant: PlantStruct { get }
     func viewDidLoad()

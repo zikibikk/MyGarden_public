@@ -72,7 +72,8 @@ extension FixedDatesView {
         
         lineView.snp.makeConstraints { make in
             make.height.equalTo(1)
-            make.leading.trailing.equalTo(self)
+            make.leading.equalToSuperview()
+            make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
         

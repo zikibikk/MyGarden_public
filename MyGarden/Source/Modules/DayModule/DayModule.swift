@@ -5,6 +5,9 @@
 //  Created by Alina Bikkinina on 29.04.2024.
 //
 
+//TODO: после добавления заметки, тэги её не видят и не добавляют
+
+
 import UIKit
 
 protocol iNoteView: UIViewController, remindableView, TagableView {
@@ -13,7 +16,7 @@ protocol iNoteView: UIViewController, remindableView, TagableView {
     func returnCurrentNoteText() -> String?
 }
 
-protocol iDayPresenter: addReminderDelegate, TagCollectionViewDelegate {
+protocol iDayPresenter: addReminderDelegate, TagCollectionViewDelegate, tagSelectionDelegate {
     var viewInput: iNoteView? { get set }
     func viewEndedEditing()
     func viewDidLoad()

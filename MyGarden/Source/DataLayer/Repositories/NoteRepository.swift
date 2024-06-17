@@ -9,6 +9,8 @@ import UIKit
 import CoreData
 
 public final class NoteRepository: iNoteRepository {
+    private let repository = Repository<NoteEntity>()
+    
     public static let shared = NoteRepository()
     private init(){
         backgroundContext = appDelegate.persistentContainer.newBackgroundContext()
@@ -188,6 +190,40 @@ extension NoteRepository {
                 try? backgroundContext.save()
             }
             return true
+        }
+    }
+    
+    public func add(plantWithId plantID: UUID, toNote note: NoteStruct) -> PlantEntity? {
+        guard let backgroundContext = self.backgroundContext else { return nil }
+        
+        var result: PlantEntity? = nil
+        
+        repository.manipulateEntityToEntity(addStruct: plantID,
+                                            toStruct: note.id,
+                                            add: PlantEntity.self,
+                                            to: NoteEntity.self,
+                                            backContext: backgroundContext) 
+        { manipulating, target in
+            result = manipulating
+            target.addPlant(plant: manipulating)
+        }
+        return result
+    }
+    
+    public func fetchAllPlants(fromNote note: NoteStruct) -> [PlantEntity] {
+        guard let backgroundContext = self.backgroundContext else { return [] }
+        
+        return backgroundContext.performAndWait {
+            let fetchNoteRequest = repository.fetchRequestWithIdPredicate(entity: NoteEntity.self, id: note.id)
+            
+            do {
+                let notes = try? backgroundContext.fetch(fetchNoteRequest)
+                let plantSet = notes?.first?.plants
+                
+                if let plantArray = plantSet?.allObjects as? [PlantEntity] {
+                    return plantArray
+                } else { return [] }
+            }
         }
     }
 }

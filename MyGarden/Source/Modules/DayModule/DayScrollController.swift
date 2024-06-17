@@ -30,7 +30,11 @@ class DayScrollController: UIViewController {
         return dayLabel
     }()
     
-    private lazy var noteView = NoteView()
+    private lazy var noteView: NoteView = {
+        let noteView = NoteView()
+        noteView.textViewDelegate = self
+        return noteView
+    }()
     
     private lazy var reminderButton = ReminderButton()
     
@@ -109,7 +113,7 @@ extension DayScrollController: iNoteView {
     }
 }
 
-extension DayScrollController {
+extension DayScrollController: UITextViewDelegate {
     //TODO: убрать сохранение по каждому тапу вне поля
     @objc func handleTap() {
         view.endEditing(true)
@@ -154,5 +158,7 @@ extension DayScrollController {
         verticalStackView.snp.makeConstraints({$0.top.equalTo(reminderButton.snp.bottom).offset(15)})
         plantsLabel.snp.makeConstraints({$0.top.equalTo(verticalStackView.snp.bottom).offset(25)})
         plantCollectionView.snp.makeConstraints({$0.top.equalTo(plantsLabel.snp.bottom).offset(10)})
+        
+        scrollView.snp.makeConstraints({$0.bottom.equalTo(plantCollectionView)})
     }
 }

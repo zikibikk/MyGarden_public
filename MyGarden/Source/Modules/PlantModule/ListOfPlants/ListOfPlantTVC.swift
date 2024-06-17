@@ -10,6 +10,8 @@ import SnapKit
 
 class ListOfPlantTVC: UIViewController {
     
+    lazy var tapPlusHandler = UITapGestureRecognizer(target: self, action: #selector (addPlant))
+    
     private let presenter: iListOfPlantsPresenter
     private var plants: [PlantStruct] = []
     
@@ -19,6 +21,13 @@ class ListOfPlantTVC: UIViewController {
         titleLabel.textColor = .black
         titleLabel.text = "Мой сад"
         return titleLabel
+    }()
+    
+    private lazy var plusImage: UIImageView = {
+        var imageView = UIImageView(image: UIImage(systemName: "plus"))
+        imageView.tintColor = .black
+        imageView.isUserInteractionEnabled = true
+        return imageView
     }()
     
     private lazy var tableView: UITableView = {
@@ -31,6 +40,12 @@ class ListOfPlantTVC: UIViewController {
         tableView.dataSource = self
         return tableView
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+        presenter.viewWillAppear()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +83,15 @@ extension ListOfPlantTVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ListOfPlantTVC: iListOfPlantsView {
-
     func getListOfPlants(plants: [PlantStruct]) {
         self.plants = plants
+    }
+}
+
+extension ListOfPlantTVC {
+    @objc func addPlant() {
+        print("www")
+        presenter.createPlant()
     }
 }
 
@@ -79,6 +100,9 @@ extension ListOfPlantTVC {
         self.view.backgroundColor = .lightGreen
         self.view.addSubview(titleLabel)
         self.view.addSubview(tableView)
+        self.view.addSubview(plusImage)
+        
+        plusImage.addGestureRecognizer(tapPlusHandler)
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(60)
@@ -90,6 +114,13 @@ extension ListOfPlantTVC {
             make.left.right.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(110)
             
+        }
+        
+        plusImage.snp.makeConstraints { make in
+            make.centerY.equalTo(titleLabel)
+            make.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(35)
+            make.width.equalTo(35)
         }
     }
 }

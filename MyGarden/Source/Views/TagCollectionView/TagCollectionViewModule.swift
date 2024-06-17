@@ -12,8 +12,8 @@ protocol TagViewDelegate {
 }
 
 protocol TagCollectionViewDelegate {
-    func pressedTag(id: UUID)
-    func addTagButtonPressed()
+    func pressedTag(withID id: UUID)
+    func addTagButtonPressedOnCollectionView()
 }
 
 protocol TagableView {

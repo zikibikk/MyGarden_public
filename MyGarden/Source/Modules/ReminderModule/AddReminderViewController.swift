@@ -10,6 +10,8 @@ import SnapKit
 
 class AddReminderController: UIViewController {
     
+    var timeMode = false
+    
     private var service: iReminderService
     private var presenter: iReminderPresenter?
     private var delegate: addReminderDelegate
@@ -72,6 +74,11 @@ class AddReminderController: UIViewController {
         presenter = self
     }
     
+    convenience init(addReminderDelegate: addReminderDelegate, timeMode: Bool) {
+        self.init(addReminderDelegate: addReminderDelegate)
+        self.timeMode = timeMode
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -93,6 +100,10 @@ extension AddReminderController {
                 .inset(30)
         }
         
+        if(timeMode) {
+            datePicker.datePickerMode = .time
+        }
+        
         verticalView.addArrangedSubview(titleLabel)
         verticalView.addArrangedSubview(textField)
         verticalView.addArrangedSubview(datePicker)
@@ -112,11 +123,18 @@ extension AddReminderController {
 extension AddReminderController: iReminderPresenter {
     func pressedAddReminderButton(date: Date, text: String) {
         if (!text.isEmpty) {
+            
+            if(timeMode) {
+                delegate.addNewReminderToView(newStruct: .init(id: UUID(), reminderText: text, reminderTime: date.getTime(), reminderDate: date.getDayWithMonthString(), reminderDateWithTime: date))
+                dismiss(animated: true)
+                return
+            }
+            
             guard let newReminder = service.saveReminder(date: date, text: text) else { return }
             delegate.addNewReminderToView(newStruct: newReminder)
             dismiss(animated: true)
         } else {
-            textField.backgroundColor = .red
+            Animations.fillBackground(view: textField, toColor: .attentionRed)
         }
     }
 }

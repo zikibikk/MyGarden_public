@@ -8,6 +8,81 @@
 import UIKit
 import SnapKit
 
+class AddPlantViewControllerAsTag: UIViewController {
+    private let presenter: iTagPresenter
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .subtitleFont
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private lazy var tagCollectionView: TagCollectionView = {
+        let tagCollectionView = TagCollectionView()
+        tagCollectionView.tagCollectionDelegate = presenter
+        tagCollectionView.hasAddButton = false
+        return tagCollectionView
+    }()
+    
+    private lazy var verticalView: UIStackView = {
+        let hv = UIStackView()
+        hv.axis = .vertical
+        hv.spacing = 8
+        return hv
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+        setUp()
+    }
+    
+    init(presenter: iTagPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AddPlantViewControllerAsTag: iTagViewController {
+    func getTitle(_ title: String) {
+        titleLabel.text = title
+    }
+    
+    func getTags(tagsStruct: [TagStruct]) {
+        tagCollectionView.tagsStruct = tagsStruct
+    }
+    
+    func addTag(tagsStruct: TagStruct) {
+        
+    }
+}
+
+extension AddPlantViewControllerAsTag {
+    func setUp() {
+        self.view.backgroundColor = .white
+        self.view.addSubview(verticalView)
+        
+        verticalView.snp.makeConstraints { maker in
+            maker.left
+                .right
+                .equalToSuperview()
+                .inset(15)
+            maker.top.equalToSuperview()
+                .inset(20)
+        }
+        verticalView.addArrangedSubview(titleLabel)
+        verticalView.addArrangedSubview(tagCollectionView)
+        
+    }
+}
+
+//TODO: сделать проверку на повторное добавление тега
 class TagViewController: UIViewController {
     private let presenter: iTagPresenter
     
@@ -76,7 +151,13 @@ class TagViewController: UIViewController {
 extension TagViewController: TagViewDelegate {
     func pressedTag(id: UUID, title: String) {
         guard let newTagName = textField.text else { return }
-        presenter.addTagButtonPressed(newTag: newTagName)
+        if newTagName == "" {
+            Animations.fillBackground(view: textField, toColor: .attentionRed)
+        }
+        else {
+            presenter.addTagButtonPressed(newTag: newTagName)
+            dismiss(animated: true)
+        }
     }
 }
 

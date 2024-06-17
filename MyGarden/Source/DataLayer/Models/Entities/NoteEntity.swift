@@ -8,12 +8,13 @@
 import CoreData
 
 @objc(NoteEntity)
-public class NoteEntity: NSManagedObject {
+public class NoteEntity: NSManagedObject, EntityWithID {
+    
     @NSManaged public var id: UUID
     @NSManaged public var text: String
     @NSManaged public var date: Date
     @NSManaged public var tags: NSSet
-//    @NSManaged public var plants: NSSet
+    @NSManaged public var plants: NSSet
     
     override public func awakeFromInsert() {
         super.awakeFromInsert()
@@ -31,11 +32,17 @@ public class NoteEntity: NSManagedObject {
         tags.remove(tag)
     }
     
-//    @objc(addPlant:)
-//    func addPlant(plant: PlantEntity) {
-//        let plants = self.mutableSetValue(forKey: "plants")
-//        plants.add(plant)
-//    }
+    @objc(addPlant:)
+    func addPlant(plant: PlantEntity) {
+        let plants = self.mutableSetValue(forKey: "plants")
+        plants.add(plant)
+    }
+    
+    @objc(remove:)
+    func remove(plant: PlantEntity) {
+        let plants = self.mutableSetValue(forKey: "plants")
+        plants.remove(plant)
+    }
 }
 
 extension NoteEntity: Identifiable {}
@@ -48,7 +55,7 @@ extension NoteEntity {
 }
 
 public struct NoteStruct {
-    var id: UUID
+    public var id: UUID
     var text: String
     var date: Date
 //    var plants: [PlantStruct] = []

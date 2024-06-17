@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class PlantRepository {
+    private let repository = Repository<PlantEntity>()
     
     public static let shared = PlantRepository()
     private init(){
@@ -24,6 +25,30 @@ class PlantRepository {
     }
     
     private var backgroundContext: NSManagedObjectContext?
+    
+    public func createPlant(withName plant: String) -> PlantEntity? {
+        guard let backgroundContext = self.backgroundContext else { return nil }
+        
+        return backgroundContext.performAndWait {
+            guard let plantEntityDescription = NSEntityDescription.entity(forEntityName: "PlantEntity", in: backgroundContext) else {
+                print("Failed to create plantEntityDescription for \(plant) \(PlantEntity.self)")
+                return nil
+            }
+            
+            let newPlantEntity = PlantEntity(entity: plantEntityDescription, insertInto: self.backgroundContext)
+            
+            newPlantEntity.name = plant
+            
+            do {
+                try backgroundContext.save()
+                print("Saved plant \(plant)!")
+                return newPlantEntity
+            } catch {
+                print("Failed to save background context: \(error)")
+                return nil
+            }
+        }
+    }
     
     public func createPlant(plant: PlantStruct) {
         guard let backgroundContext = self.backgroundContext else { return }
@@ -110,14 +135,6 @@ class PlantRepository {
 extension PlantRepository {
     
     func test(reminder: ReminderStruct, plant: PlantStruct) {
-        
-//        Repository.manipulateEntityToEntity(addStruct: reminder.id,
-//                                     toStruct: plant.id,
-//                                     add: ReminderEntity.self,
-//                                     to: PlantEntity.self,
-//                                     backContext: backgroundContext) { manipulating, target in
-//            target.addReminder(reminder: manipulating)
-//        }
     }
     
     func fetchRequestWithIdPredicate(entityName: String, id: UUID) -> NSFetchRequest<NSFetchRequestResult> {
@@ -130,19 +147,23 @@ extension PlantRepository {
     public func fethPlantReminders(plant: PlantStruct) -> [ReminderEntity] {
         guard let backgroundContext = self.backgroundContext else { return [] }
         
-        return backgroundContext.performAndWait {
-            
-            let plantRequest = self.fetchRequestWithIdPredicate(entityName: "\(PlantEntity.self)", id: plant.id)
-            
-            do {
-                let plants = try? backgroundContext.fetch(plantRequest) as? [PlantEntity]
-                let reminderSet = plants?.first?.reminders
-                
-                if let reminderArray = reminderSet?.allObjects as? [ReminderEntity] {
-                    return reminderArray
-                } else { return [] }
-            }
-        }
+        return repository.fetch(fromEntityWithID: plant.id, arrayOfType: ReminderEntity.self, fromSet: { fromEntity in
+            fromEntity?.reminders
+        }, backgroundContext: backgroundContext)
+        
+//        return backgroundContext.performAndWait {
+//            
+//            let plantRequest = self.fetchRequestWithIdPredicate(entityName: "\(PlantEntity.self)", id: plant.id)
+//            
+//            do {
+//                let plants = try? backgroundContext.fetch(plantRequest) as? [PlantEntity]
+//                let reminderSet = plants?.first?.reminders
+//                
+//                if let reminderArray = reminderSet?.allObjects as? [ReminderEntity] {
+//                    return reminderArray
+//                } else { return [] }
+//            }
+//        }
     }
     
     public func addReminderToPlant(_ reminder: ReminderStruct, toPlant plant: PlantStruct) -> Bool {
@@ -182,6 +203,51 @@ extension PlantRepository {
                 try? backgroundContext.save()
             }
             return true
+        }
+    }
+    
+    func fetchTags(forPlant plant: PlantStruct) -> [TagEntity]{
+        guard let backgroundContext = self.backgroundContext else { return [] }
+        
+        return backgroundContext.performAndWait {
+            
+            let plantRequest = self.fetchRequestWithIdPredicate(entityName: "\(PlantEntity.self)", id: plant.id)
+            
+            do {
+                let plants = try? backgroundContext.fetch(plantRequest) as? [PlantEntity]
+                let tagSet = plants?.first?.tags
+                
+                if let tagArray = tagSet?.allObjects as? [TagEntity] {
+                    return tagArray
+                } else { return [] }
+            }
+        }
+    }
+    
+    func add(tag: TagStruct, toPlant plant: PlantStruct) -> Bool {
+        guard let backgroundContext = self.backgroundContext else { return false }
+        
+        return backgroundContext.performAndWait {
+            let tagFetchRequest = self.fetchRequestWithIdPredicate(entityName: "\(TagEntity.self)", id: tag.id)
+            let plantFetchRequest = self.fetchRequestWithIdPredicate(entityName: "\(PlantEntity.self)", id: plant.id)
+            
+            do {
+                let tags = try? backgroundContext.fetch(tagFetchRequest) as? [TagEntity]
+                let plants = try? backgroundContext.fetch(plantFetchRequest) as? [PlantEntity]
+                guard let tagToAdd = tags?.first else { return false }
+                plants?.first?.addTag(tag: tagToAdd)
+                try? backgroundContext.save()
+            }
+            return true
+        }
+    }
+    
+    func remove(fromPlant: PlantStruct, tag: TagStruct) {
+        guard let backgroundContext = self.backgroundContext else { return }
+        
+        var repository = Repository<TagEntity>()
+        repository.manipulateEntityToEntity(addStruct: fromPlant.id, toStruct: tag.id, add: PlantEntity.self, to: TagEntity.self, backContext: backgroundContext) { manipulating, target in
+            target.removePlant(plant: manipulating)
         }
     }
     

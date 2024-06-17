@@ -21,14 +21,3 @@ enum ListOfPlantAssembly {
         return navigationController
     }
 }
-
-//enum PlantAssembly {
-//    static func assemble() -> UIViewController {
-//        let plantPresenter = MockPlantPresenter()
-//        
-//        let plantViewController = PlantTableViewController(presenter: plantPresenter)
-//        plantPresenter.viewInput = plantViewController
-//        
-//        return plantViewController
-//    }
-//}

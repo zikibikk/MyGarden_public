@@ -40,6 +40,8 @@ class RemindView: UIView {
         get { return descriptionLabel.text }
     }
     
+    var fullDate = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
